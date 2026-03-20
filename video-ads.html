@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offres Vidéo Publicitaires — KLIKOO Store</title>
+<link rel="icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --pr:#ff8716;--prd:#e06500;--prl:#fff4ec;
+  --dk:#0f0f12;--dk2:#1c1c22;--mid:#4a4a5a;--gr:#7a7a8c;--bd:#e8e8f0;
+  --white:#fff;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--dk);overflow-x:hidden}
+
+/* NAV */
+.nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(20,14,8,.97);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,135,22,.15);
+  padding:0 5%;
+  display:flex;align-items:center;
+  height:64px;
+  gap:16px;
+}
+.nav-logo{display:flex;align-items:flex-start;flex-direction:column;text-decoration:none;gap:1px}
+.nav-logo-name{font-family:'Syne',sans-serif;font-weight:900;font-size:22px;color:#fff;line-height:1}
+.nav-logo-name span{color:var(--pr)}
+.nav-logo-tag{font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.5px}
+.nav-back{
+  margin-left:auto;
+  display:inline-flex;align-items:center;gap:8px;
+  color:rgba(255,255,255,.7);text-decoration:none;
+  font-size:13px;font-weight:600;
+  padding:8px 18px;
+  border:1px solid rgba(255,135,22,.35);
+  border-radius:30px;
+  transition:.2s;
+  background:rgba(255,135,22,.08);
+}
+.nav-back:hover{border-color:var(--pr);color:var(--pr);background:rgba(255,135,22,.15)}
+
+/* HERO */
+.hero{
+  background:#0d0a06;
+  min-height:auto;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  padding:110px 5% 70px;
+  position:relative;overflow:hidden;
+}
+/* Grille */
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,135,22,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,135,22,.035) 1px,transparent 1px);
+  background-size:72px 72px;
+  mask-image:radial-gradient(ellipse 85% 85% at 50% 50%,black 30%,transparent 100%);
+  pointer-events:none;
+}
+.hero::after{content:none}
+/* Orbs */
+.hero-orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px)}
+.hero-orb-1{width:600px;height:600px;top:-130px;right:-100px;background:rgba(255,135,22,.16);animation:orbF 13s ease-in-out infinite}
+.hero-orb-2{width:450px;height:450px;bottom:-120px;left:-80px;background:rgba(200,70,0,.11);animation:orbF 17s ease-in-out infinite reverse 2s}
+.hero-orb-3{width:220px;height:220px;top:42%;left:28%;background:rgba(255,160,30,.06);animation:orbF 8s ease-in-out infinite 1.5s}
+@keyframes orbF{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(28px,-20px) scale(1.04)}66%{transform:translate(-14px,24px) scale(.97)}}
+/* Lignes déco */
+.hero-deco-line{position:absolute;pointer-events:none}
+.hdl-1{width:1px;height:200px;background:linear-gradient(to bottom,transparent,rgba(255,135,22,.4),transparent);right:22%;top:14%;transform:rotate(16deg);animation:ldPulse 3.5s ease-in-out infinite}
+.hdl-2{width:160px;height:1px;background:linear-gradient(to right,transparent,rgba(255,135,22,.25),transparent);left:14%;bottom:30%;animation:ldPulse 5s ease-in-out infinite 2s}
+@keyframes ldPulse{0%,100%{opacity:.35}50%{opacity:.9}}
+
+.hero-content{position:relative;z-index:1;max-width:860px;margin:0 auto}
+
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(255,135,22,.1);
+  border:1px solid rgba(255,135,22,.28);
+  color:rgba(255,195,100,.9);
+  font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  padding:9px 22px;border-radius:50px;
+  margin-bottom:18px;
+  animation:fadeUp .7s .1s both;
+}
+.blink{width:7px;height:7px;background:var(--pr);border-radius:50%;box-shadow:0 0 8px var(--pr);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1;box-shadow:0 0 8px var(--pr)}50%{opacity:.3;box-shadow:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+.hero-title{
+  font-family:'Syne',sans-serif;font-weight:900;
+  font-size:clamp(34px,5.5vw,64px);
+  color:#fff;line-height:.95;
+  margin-bottom:10px;
+  letter-spacing:-2px;
+  animation:fadeUp .7s .2s both;
+}
+.hero-title .orange{
+  display:block;
+  color:transparent;
+  -webkit-text-stroke:2px var(--pr);
+  filter:drop-shadow(0 0 24px rgba(255,135,22,.45));
+}
+
+/* Diviseur décoratif */
+.hero-sep{display:flex;align-items:center;gap:12px;justify-content:center;margin:14px 0;animation:fadeUp .7s .28s both}
+.hero-sep-line{width:54px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,135,22,.5))}
+.hero-sep-line.r{background:linear-gradient(270deg,transparent,rgba(255,135,22,.5))}
+.hero-sep-dot{width:5px;height:5px;background:var(--pr);border-radius:50%}
+
+.hero-sub{
+  font-size:13.5px;
+  color:rgba(255,255,255,.42);
+  max-width:480px;margin:0 auto 24px;
+  line-height:1.85;
+  animation:fadeUp .7s .32s both;
+}
+
+/* CTAs */
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;animation:fadeUp .7s .4s both}
+.cta-p{
+  display:inline-flex;align-items:center;gap:10px;
+  background:linear-gradient(135deg,var(--pr),#e05800);
+  color:#fff;padding:15px 32px;border-radius:13px;
+  font-size:14px;font-weight:700;
+  box-shadow:0 8px 28px rgba(255,90,0,.4),inset 0 1px 0 rgba(255,255,255,.14);
+  transition:.3s;text-decoration:none;
+}
+.cta-p:hover{transform:translateY(-4px);box-shadow:0 18px 46px rgba(255,90,0,.52)}
+.cta-s{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  color:rgba(255,255,255,.8);
+  padding:15px 32px;border-radius:13px;
+  font-size:14px;font-weight:600;
+  transition:.3s;text-decoration:none;
+  backdrop-filter:blur(8px);
+}
+.cta-s:hover{background:rgba(255,255,255,.11);border-color:rgba(255,135,22,.4);transform:translateY(-4px)}
+
+/* Stats band */
+.stats-band{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border:1px solid rgba(255,135,22,.15);
+  border-radius:18px;
+  overflow:hidden;
+  background:rgba(255,255,255,.03);
+  backdrop-filter:blur(12px);
+  max-width:760px;
+  margin:0 auto;
+  animation:fadeUp .7s .5s both;
+}
+.stat-item{
+  padding:16px 12px;
+  text-align:center;
+  border-right:1px solid rgba(255,135,22,.1);
+  transition:.25s;
+}
+.stat-item:last-child{border-right:none}
+.stat-item:hover{background:rgba(255,135,22,.05)}
+.stat-val{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(20px,2.5vw,28px);
+  font-weight:900;color:#fff;
+  line-height:1;
+}
+.stat-val em{color:var(--pr);font-style:normal}
+.stat-lbl{
+  font-size:10px;color:rgba(255,255,255,.3);
+  margin-top:6px;text-transform:uppercase;letter-spacing:.8px;
+}
+
+/* ── SECTIONS COMMUNES ── */
+.sec{padding:80px 5%;background:#fff}
+.sec-inner{max-width:1100px;margin:0 auto}
+.sec-head{text-align:center;margin-bottom:52px}
+.sec-tag{
+  display:inline-block;
+  background:var(--prl);color:var(--prd);
+  font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+  padding:5px 16px;border-radius:20px;margin-bottom:14px;
+}
+.sec-title{
+  font-family:'Syne',sans-serif;font-weight:900;
+  font-size:clamp(26px,3.8vw,44px);line-height:1.05;
+  color:var(--dk);letter-spacing:-1.5px;
+}
+.sec-title span{color:var(--pr)}
+.sec-sub{font-size:14px;color:var(--gr);margin-top:12px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7}
+
+/* ── PACKAGES ── */
+.pkgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:18px}
+.pkg{
+  border:1.5px solid var(--bd);
+  border-radius:18px;padding:28px 24px;
+  transition:.35s;position:relative;overflow:hidden;
+  background:#fff;
+}
+.pkg::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 0%,rgba(255,135,22,.04) 0%,transparent 55%);
+  opacity:0;transition:.35s;
+}
+.pkg::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--pr),#ffb347);
+  transform:scaleX(0);transform-origin:left;transition:.35s;
+}
+.pkg:hover{border-color:rgba(255,135,22,.5);transform:translateY(-5px);box-shadow:0 18px 48px rgba(255,90,0,.1)}
+.pkg:hover::before{opacity:1}
+.pkg:hover::after{transform:scaleX(1)}
+.pkg.feat{
+  border-color:var(--pr);
+  box-shadow:0 6px 28px rgba(255,90,0,.1);
+}
+.pkg-badge{
+  position:absolute;top:14px;right:14px;
+  background:linear-gradient(135deg,var(--pr),var(--prd));
+  color:#fff;font-size:9px;font-weight:800;padding:3px 10px;border-radius:20px;
+}
+.pkg-icon{
+  width:46px;height:46px;border-radius:12px;
+  background:linear-gradient(135deg,var(--pr),var(--prd));
+  color:#fff;font-size:18px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:16px;
+  box-shadow:0 4px 14px rgba(255,90,0,.25);
+}
+.pkg-name{font-family:'Syne',sans-serif;font-size:18px;font-weight:900;color:var(--dk);margin-bottom:4px;letter-spacing:-.5px}
+.pkg-tagline{font-size:11px;color:var(--pr);font-weight:600;margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px}
+.pkg-desc{font-size:12.5px;color:var(--gr);line-height:1.7;margin-bottom:18px}
+.pkg-feats{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
+.pkg-feats li{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--mid)}
+.pkg-feats li i{color:var(--pr);width:12px;font-size:10px}
+.pkg-price{display:flex;align-items:baseline;gap:5px;margin-bottom:18px}
+.pkg-amount{font-family:'Syne',sans-serif;font-size:32px;font-weight:900;color:var(--pr);letter-spacing:-1px}
+.pkg-unit{font-size:12px;color:var(--gr)}
+.pkg-btn{
+  width:100%;padding:12px;border-radius:50px;
+  font-weight:700;font-size:13px;border:none;cursor:pointer;
+  transition:.3s;text-decoration:none;display:block;text-align:center;
+  font-family:'DM Sans',sans-serif;
+}
+.pkg-btn.solid{
+  background:linear-gradient(135deg,var(--pr),var(--prd));
+  color:#fff;box-shadow:0 5px 18px rgba(255,90,0,.3);
+}
+.pkg-btn.solid:hover{box-shadow:0 10px 28px rgba(255,90,0,.48);transform:translateY(-2px)}
+.pkg-btn.line{background:transparent;border:1.5px solid var(--bd);color:var(--dk)}
+.pkg-btn.line:hover{border-color:var(--pr);color:var(--pr)}
+
+/* ── PROCESS ── */
+.process-sec{
+  background:linear-gradient(160deg,#140e08 0%,#1e1208 60%,#2a1800 100%);
+  padding:80px 5%;
+  position:relative;overflow:hidden;
+}
+.process-sec::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,135,22,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,135,22,.03) 1px,transparent 1px);
+  background-size:60px 60px;pointer-events:none;
+}
+.process-glow{
+  position:absolute;width:500px;height:250px;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  background:radial-gradient(ellipse,rgba(255,135,22,.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:28px;max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.steps::before{
+  content:'';position:absolute;
+  top:28px;left:14%;right:14%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,135,22,.2),rgba(255,135,22,.35),rgba(255,135,22,.2),transparent);
+}
+.step{text-align:center}
+.step-n{
+  width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,var(--pr),var(--prd));
+  color:#fff;font-family:'Syne',sans-serif;font-size:20px;font-weight:900;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;
+  box-shadow:0 6px 20px rgba(255,90,0,.4),0 0 0 5px rgba(255,135,22,.08);
+}
+.step-t{font-family:'Syne',sans-serif;font-weight:800;font-size:15px;color:#fff;margin-bottom:7px}
+.step-d{font-size:12.5px;color:rgba(255,255,255,.35);line-height:1.7}
+
+/* ── FORM ── */
+.form-sec{background:#f8f8fb;padding:80px 5%}
+.form-wrap{max-width:660px;margin:0 auto}
+.form-card{
+  background:#fff;
+  border:1.5px solid var(--bd);
+  border-radius:20px;padding:40px;
+  box-shadow:0 8px 40px rgba(0,0,0,.06);
+  position:relative;overflow:hidden;
+}
+.form-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--pr),#ffb347,var(--pr),transparent);
+}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.fg{margin-bottom:16px}
+.fl{font-size:11.5px;font-weight:700;color:var(--dk);margin-bottom:7px;display:block;letter-spacing:.3px}
+.req{color:var(--pr)}
+.fi,.fs,.ft{
+  width:100%;padding:11px 14px;
+  border:1.5px solid var(--bd);
+  border-radius:10px;font-size:13px;
+  font-family:'DM Sans',sans-serif;
+  color:var(--dk);background:#fff;
+  transition:.2s;
+}
+.fi:focus,.fs:focus,.ft:focus{outline:none;border-color:var(--pr);box-shadow:0 0 0 3px rgba(255,135,22,.08)}
+.ft{resize:vertical;min-height:100px;line-height:1.6}
+.hint{font-size:11px;color:var(--gr);margin-top:5px;display:block}
+.divider{border:none;border-top:1px solid var(--bd);margin:22px 0}
+.submit-btn{
+  width:100%;padding:14px;
+  background:linear-gradient(135deg,var(--pr),var(--prd));
+  color:#fff;font-weight:700;font-size:14px;
+  border:none;border-radius:50px;cursor:pointer;transition:.3s;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  box-shadow:0 7px 22px rgba(255,90,0,.35);
+  font-family:'DM Sans',sans-serif;
+}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(255,90,0,.48)}
+.success{display:none;text-align:center;padding:44px 28px}
+.success-ico{font-size:48px;margin-bottom:16px}
+.success-t{font-family:'Syne',sans-serif;font-size:24px;font-weight:900;color:var(--dk);margin-bottom:10px;letter-spacing:-.5px}
+.success-s{font-size:14px;color:var(--gr)}
+
+/* ── FAQ ── */
+.faq-sec{background:#fff;padding:80px 5%}
+.faq-list{max-width:660px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
+.faq-item{
+  background:#fff;
+  border:1.5px solid var(--bd);
+  border-radius:14px;overflow:hidden;transition:.2s;
+}
+.faq-item.open{border-color:var(--pr)}
+.faq-q{padding:18px 22px;font-weight:600;font-size:14px;color:var(--dk);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.faq-q i{color:var(--pr);transition:.3s;flex-shrink:0}
+.faq-item.open .faq-q i{transform:rotate(180deg)}
+.faq-a{padding:0 22px 18px;font-size:13px;color:var(--gr);line-height:1.7;display:none}
+.faq-item.open .faq-a{display:block}
+
+/* ── CTA FINAL ── */
+.cta-sec{
+  background:linear-gradient(160deg,#140e08 0%,#1e1208 60%,#2a1800 100%);
+  padding:80px 5%;text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-sec::before{content:none}
+.cta-sec::after{
+  content:'';position:absolute;
+  width:600px;height:600px;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(255,135,22,.1) 0%,transparent 65%);
+  pointer-events:none;
+}
+.cta-sec h2{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(28px,4.5vw,52px);
+  font-weight:900;color:#fff;
+  margin-bottom:14px;
+  position:relative;z-index:1;
+  letter-spacing:-1.5px;line-height:1.05;
+}
+.cta-sec h2 span{color:var(--pr)}
+.cta-sec p{font-size:15px;color:rgba(255,255,255,.4);margin-bottom:32px;max-width:380px;margin-left:auto;margin-right:auto;position:relative;z-index:1}
+.btn-orange{
+  display:inline-flex;align-items:center;gap:10px;
+  background:linear-gradient(135deg,var(--pr),var(--prd));
+  color:#fff;font-weight:700;font-size:14px;
+  padding:14px 34px;border-radius:50px;
+  text-decoration:none;
+  box-shadow:0 7px 28px rgba(255,90,0,.4);
+  transition:.3s;border:none;cursor:pointer;
+  position:relative;z-index:1;
+}
+.btn-orange:hover{transform:translateY(-3px);box-shadow:0 16px 44px rgba(255,90,0,.55)}
+
+footer{background:var(--dk2);padding:28px 5%;text-align:center;font-size:12px;color:rgba(255,255,255,.3)}
+
+@media(max-width:768px){
+  .steps::before{display:none}
+}
+@media(max-width:640px){
+  .stats-band{grid-template-columns:repeat(2,1fr)}
+  .frow{grid-template-columns:1fr}
+  .form-card{padding:24px 16px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-name">KLIKOO<span>.</span></span>
+    <span class="nav-logo-tag">Shopping Store</span>
+  </a>
+  <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i> Retour</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+  <div class="hero-deco-line hdl-1"></div>
+  <div class="hero-deco-line hdl-2"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="blink"></span> Formats Vidéo Disponibles</div>
+    <h1 class="hero-title">Offre Vidéo<span class="orange">Publicitaires</span></h1>
+    <div class="hero-sep">
+      <div class="hero-sep-line"></div>
+      <div class="hero-sep-dot"></div>
+      <div class="hero-sep-line r"></div>
+    </div>
+    <p class="hero-sub">Des vidéos publicitaires professionnelles pour votre produit — montage HD, livraison rapide, et des prix imbattables au Maroc.</p>
+    <div class="hero-ctas">
+      <a href="#packages" class="cta-p"><i class="fas fa-play"></i> Voir les packages</a>
+      <a href="#commande" class="cta-s"><i class="fas fa-envelope"></i> Commander</a>
+    </div>
+    <div class="stats-band">
+      <div class="stat-item">
+        <div class="stat-val">4</div>
+        <div class="stat-lbl">Offres disponibles</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">dès <em>99</em></div>
+        <div class="stat-lbl">MAD seulement</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">48<em>h</em></div>
+        <div class="stat-lbl">Livraison rapide</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">∞</div>
+        <div class="stat-lbl">Sur certains packages</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="sec" id="packages">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-tag">Nos Packages Vidéo</div>
+      <h2 class="sec-title">4 packages <span>pour chaque budget</span></h2>
+      <p class="sec-sub">Des vidéos publicitaires professionnelles, livrées rapidement, adaptées à votre produit</p>
+    </div>
+    <div class="pkgs">
+
+      <!-- Package Starter -->
+      <div class="pkg">
+        <div class="pkg-icon"><i class="fas fa-play"></i></div>
+        <div class="pkg-name">Starter</div>
+        <div class="pkg-tagline">Idéal pour débuter</div>
+        <div class="pkg-desc">Une vidéo courte et percutante pour présenter votre produit sur les réseaux sociaux.</div>
+        <ul class="pkg-feats">
+          <li><i class="fas fa-check"></i> Vidéo 15-30 secondes</li>
+          <li><i class="fas fa-check"></i> Montage HD 1080p</li>
+          <li><i class="fas fa-check"></i> Musique libre de droits</li>
+          <li><i class="fas fa-check"></i> Sous-titres inclus</li>
+          <li><i class="fas fa-check"></i> Livraison 48h</li>
+        </ul>
+        <div class="pkg-price">
+          <span class="pkg-amount">99</span>
+          <span class="pkg-unit">MAD</span>
+        </div>
+        <a href="#commande" class="pkg-btn line">Commander</a>
+      </div>
+
+      <!-- Package Pro -->
+      <div class="pkg feat">
+        <div class="pkg-badge">🔥 POPULAIRE</div>
+        <div class="pkg-icon"><i class="fas fa-video"></i></div>
+        <div class="pkg-name">Pro</div>
+        <div class="pkg-tagline">Le meilleur rapport qualité/prix</div>
+        <div class="pkg-desc">Vidéo professionnelle avec animations, effets visuels et voix off pour maximiser l'impact.</div>
+        <ul class="pkg-feats">
+          <li><i class="fas fa-check"></i> Vidéo 30-60 secondes</li>
+          <li><i class="fas fa-check"></i> Animations & effets visuels</li>
+          <li><i class="fas fa-check"></i> Voix off professionnelle</li>
+          <li><i class="fas fa-check"></i> 2 révisions incluses</li>
+          <li><i class="fas fa-check"></i> Livraison 48h</li>
+          <li><i class="fas fa-check"></i> Formats multi-réseaux</li>
+        </ul>
+        <div class="pkg-price">
+          <span class="pkg-amount">249</span>
+          <span class="pkg-unit">MAD</span>
+        </div>
+        <a href="#commande" class="pkg-btn solid">Commander</a>
+      </div>
+
+      <!-- Package Premium -->
+      <div class="pkg">
+        <div class="pkg-icon" style="background:linear-gradient(135deg,#6c63ff,#4a41dd)"><i class="fas fa-film"></i></div>
+        <div class="pkg-name">Premium</div>
+        <div class="pkg-tagline">Pour les marques ambitieuses</div>
+        <div class="pkg-desc">Production complète avec motion design, musique personnalisée et révisions illimitées.</div>
+        <ul class="pkg-feats">
+          <li><i class="fas fa-check"></i> Vidéo 60-90 secondes</li>
+          <li><i class="fas fa-check"></i> Motion design avancé</li>
+          <li><i class="fas fa-check"></i> Musique personnalisée</li>
+          <li><i class="fas fa-check"></i> Révisions illimitées</li>
+          <li><i class="fas fa-check"></i> Livraison 48h</li>
+          <li><i class="fas fa-check"></i> Fichiers sources inclus</li>
+        </ul>
+        <div class="pkg-price">
+          <span class="pkg-amount">499</span>
+          <span class="pkg-unit">MAD</span>
+        </div>
+        <a href="#commande" class="pkg-btn line">Commander</a>
+      </div>
+
+      <!-- Package Pack -->
+      <div class="pkg">
+        <div class="pkg-icon" style="background:linear-gradient(135deg,#f72585,#b5179e)"><i class="fas fa-layer-group"></i></div>
+        <div class="pkg-name">Pack Complet</div>
+        <div class="pkg-tagline">Solution tout inclus</div>
+        <div class="pkg-desc">3 vidéos différentes pour tous vos canaux : Stories, Feed et Publicité. Économisez 30%.</div>
+        <ul class="pkg-feats">
+          <li><i class="fas fa-check"></i> 3 vidéos optimisées</li>
+          <li><i class="fas fa-check"></i> Format Stories 9:16</li>
+          <li><i class="fas fa-check"></i> Format Feed 1:1</li>
+          <li><i class="fas fa-check"></i> Format Pub 16:9</li>
+          <li><i class="fas fa-check"></i> Révisions illimitées</li>
+          <li><i class="fas fa-check"></i> Économie de 30%</li>
+        </ul>
+        <div class="pkg-price">
+          <span class="pkg-amount">799</span>
+          <span class="pkg-unit">MAD</span>
+        </div>
+        <a href="#commande" class="pkg-btn line">Commander</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESSUS -->
+<section class="process-sec">
+  <div class="sec-head" style="position:relative;z-index:1;margin-bottom:48px">
+    <div class="sec-tag">Comment ça marche</div>
+    <h2 class="sec-title">Simple. <span>Rapide.</span> Pro.</h2>
+    <p class="sec-sub">Votre vidéo prête en 48h chrono</p>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div class="step-t">Commandez</div><div class="step-d">Choisissez votre package et remplissez le formulaire.</div></div>
+    <div class="step"><div class="step-n">2</div><div class="step-t">Brief</div><div class="step-d">Envoyez vos photos, logo et textes par WhatsApp.</div></div>
+    <div class="step"><div class="step-n">3</div><div class="step-t">Production 48h</div><div class="step-d">Notre équipe crée votre vidéo professionnelle.</div></div>
+    <div class="step"><div class="step-n">4</div><div class="step-t">Livraison</div><div class="step-d">Fichier HD livré + révisions jusqu'à satisfaction.</div></div>
+  </div>
+</section>
+
+<!-- FORMULAIRE -->
+<section class="form-sec" id="commande">
+  <div class="form-wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Commander</div>
+      <h2 class="sec-title">Démarrez votre <span>vidéo</span></h2>
+      <p class="sec-sub">Remplissez et on vous contacte sous 2h</p>
+    </div>
+    <div class="form-card" id="formCard">
+      <div class="frow">
+        <div class="fg"><label class="fl">Nom <span class="req">*</span></label><input class="fi" id="fName" type="text" placeholder="Mohammed Alami"></div>
+        <div class="fg"><label class="fl">WhatsApp <span class="req">*</span></label><input class="fi" id="fPhone" type="tel" placeholder="+212 6XX XXX XXX"></div>
+      </div>
+      <div class="fg"><label class="fl">Email</label><input class="fi" id="fEmail" type="email" placeholder="contact@votreshop.ma"></div>
+      <div class="fg"><label class="fl">Nom de votre boutique / marque <span class="req">*</span></label><input class="fi" id="fBrand" type="text" placeholder="Ex: KlikShop, MaMarque..."></div>
+      <hr class="divider">
+      <div class="fg">
+        <label class="fl">Package choisi <span class="req">*</span></label>
+        <select class="fs" id="fPkg">
+          <option value="">— Choisissez votre package —</option>
+          <option value="starter">Starter — 99 MAD</option>
+          <option value="pro">Pro — 249 MAD ⭐</option>
+          <option value="premium">Premium — 499 MAD</option>
+          <option value="pack">Pack Complet — 799 MAD (-30%)</option>
+        </select>
+      </div>
+      <div class="fg"><label class="fl">Lien de votre produit / site</label><input class="fi" id="fUrl" type="url" placeholder="https://votresite.ma/produit"></div>
+      <div class="fg">
+        <label class="fl">Description de votre produit <span class="req">*</span></label>
+        <textarea class="ft" id="fDesc" placeholder="Décrivez votre produit, votre cible, le message à transmettre..."></textarea>
+        <span class="hint">Plus vous êtes précis, meilleure sera votre vidéo.</span>
+      </div>
+      <button class="submit-btn" onclick="submitForm()"><i class="fas fa-paper-plane"></i> Envoyer ma commande</button>
+    </div>
+    <div class="success" id="successMsg">
+      <div class="success-ico">🎬</div>
+      <div class="success-t">Commande reçue !</div>
+      <div class="success-s">Notre équipe vous contacte sous 2h sur WhatsApp pour démarrer votre vidéo.</div>
+      <a href="index.html" style="display:inline-block;margin-top:20px;color:var(--pr);font-weight:700;text-decoration:none"><i class="fas fa-arrow-left"></i> Retour au site</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-tag">FAQ</div>
+      <h2 class="sec-title">Questions <span>fréquentes</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Quoi envoyer pour commencer ? <i class="fas fa-chevron-down"></i></div><div class="faq-a">Photos du produit, logo, textes ou description. Tout par WhatsApp après commande.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">La vidéo est prête en combien de temps ? <i class="fas fa-chevron-down"></i></div><div class="faq-a">48h après réception de tous les éléments. Express 24h disponible sur demande.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Puis-je demander des modifications ? <i class="fas fa-chevron-down"></i></div><div class="faq-a">Oui. Starter : 1 révision. Pro : 2 révisions. Premium et Pack : révisions illimitées.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Dans quel format je reçois la vidéo ? <i class="fas fa-chevron-down"></i></div><div class="faq-a">MP4 HD 1080p. Format adapté selon le réseau (Instagram, TikTok, Facebook, YouTube).</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Comment se fait le paiement ? <i class="fas fa-chevron-down"></i></div><div class="faq-a">50% à la commande, 50% à la livraison. Virement ou espèces.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <h2>Boostez vos ventes<br>avec la <span>vidéo</span></h2>
+  <p>Des centaines de boutiques au Maroc nous font confiance.</p>
+  <a href="#commande" class="btn-orange"><i class="fas fa-rocket"></i> Commander ma vidéo</a>
+</section>
+
+<footer>© 2025 KLIKOO Store — Tous droits réservés</footer>
+
+<!-- ══ RADIO + PLAYLIST ══ -->
+<link rel="stylesheet" href="radio.css">
+<button id="radioToggle" onclick="toggleRadioBar()" title="Radio KLIKOO">
+  <i class="fas fa-music" id="radioToggleIcon"></i>
+</button>
+<div id="radioBar">
+  <div class="rb-label">
+    <div class="rb-dot" id="rbDot"></div>
+    Radio
+  </div>
+  <div class="rb-disc" id="rbDisc">🎵</div>
+  <div class="rb-info">
+    <div class="rb-title" id="rbTitle">Aucune piste</div>
+    <div class="rb-artist" id="rbArtist">Ajoutez des chansons via le Dashboard</div>
+  </div>
+  <div class="rb-progress-wrap">
+    <div class="rb-progress-bar" id="rbProgressBar" onclick="rbSeek(event)">
+      <div class="rb-progress-fill" id="rbProgressFill"></div>
+    </div>
+    <div class="rb-times">
+      <span id="rbCurrent">0:00</span>
+      <span id="rbDuration">0:00</span>
+    </div>
+  </div>
+  <div class="rb-controls">
+    <button class="rb-btn" onclick="rbPrev()" title="Précédent"><i class="fas fa-step-backward"></i></button>
+    <button class="rb-btn-play" id="rbPlayBtn" onclick="rbTogglePlay()"><i class="fas fa-play" id="rbPlayIcon"></i></button>
+    <button class="rb-btn" onclick="rbNext()" title="Suivant"><i class="fas fa-step-forward"></i></button>
+    <button class="rb-btn" id="rbShuffleBtn" onclick="rbToggleShuffle()" title="Aléatoire"><i class="fas fa-random"></i></button>
+  </div>
+  <div class="rb-vol">
+    <i class="fas fa-volume-down"></i>
+    <input type="range" class="rb-vol-slider" id="rbVolSlider" min="0" max="100" value="80" oninput="rbSetVol(this.value)">
+    <i class="fas fa-volume-up"></i>
+  </div>
+  <button id="rbPlaylistBtn" onclick="rbTogglePlaylist()" title="Playlist">
+    <i class="fas fa-list"></i>
+  </button>
+</div>
+
+<!-- Playlist Panel -->
+<div id="rbPlaylistPanel">
+  <div class="rb-pl-header">
+    <div class="rb-pl-title">
+      <i class="fas fa-music"></i> Playlist
+      <span class="rb-pl-count" id="rbPlCount">0 pistes</span>
+    </div>
+    <button class="rb-pl-close" onclick="rbTogglePlaylist()" title="Fermer"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="rb-pl-search-wrap">
+    <input class="rb-pl-search" id="rbPlSearch" type="text" placeholder="Rechercher une piste..." oninput="rbRenderPlaylist(this.value)">
+  </div>
+  <div class="rb-pl-list" id="rbPlList"></div>
+</div>
+<script src="radio.js"></script>
+
+<script>
+function toggleFaq(el){el.parentElement.classList.toggle('open')}
+
+function submitForm(){
+  var n=document.getElementById('fName').value.trim();
+  var p=document.getElementById('fPhone').value.trim();
+  var b=document.getElementById('fBrand').value.trim();
+  var pkg=document.getElementById('fPkg').value;
+  var d=document.getElementById('fDesc').value.trim();
+  if(!n||!p||!b||!pkg||!d){alert('⚠️ Veuillez remplir tous les champs obligatoires.');return}
+  try{
+    var orders=JSON.parse(localStorage.getItem('klikoo_video_orders')||'[]');
+    orders.push({
+      id:'ord-'+Date.now(),name:n,phone:p,
+      email:document.getElementById('fEmail').value,
+      brand:b,package:pkg,
+      url:document.getElementById('fUrl').value,
+      description:d,status:'pending',
+      createdAt:new Date().toISOString()
+    });
+    localStorage.setItem('klikoo_video_orders',JSON.stringify(orders));
+  }catch(e){}
+  document.getElementById('formCard').style.display='none';
+  document.getElementById('successMsg').style.display='block';
+  window.scrollTo({top:document.getElementById('commande').offsetTop-80,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publicité Vidéo — KLIKOO Store</title>
+<link rel="icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --pr:#ff8716;--prd:#e06500;--prl:#fff4ec;
+  --dk:#0f0f12;--dk2:#1c1c22;--mid:#4a4a5a;--gr:#7a7a8c;--bd:#e8e8f0;
+  --white:#fff;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--dk);overflow-x:hidden}
+
+/* NAV */
+.nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--bd);
+  padding:0 5%;
+  display:flex;align-items:center;
+  height:64px;
+}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-text{font-family:'Syne',sans-serif;font-weight:900;font-size:22px;color:var(--dk)}
+.nav-logo-text span{color:var(--pr)}
+.nav-tagline{font-size:11px;color:var(--gr);display:block;margin-top:-3px}
+.nav-back{
+  margin-left:auto;
+  display:inline-flex;align-items:center;gap:8px;
+  color:var(--mid);text-decoration:none;
+  font-size:14px;font-weight:500;
+  padding:8px 18px;
+  border:1px solid var(--bd);border-radius:30px;
+  transition:.2s;
+}
+.nav-back:hover{border-color:var(--pr);color:var(--pr)}
+
+/* HERO */
+.hero{
+  background:#0d0608;
+  min-height:auto;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  padding:110px 5% 70px;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,135,22,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,135,22,.035) 1px,transparent 1px);
+  background-size:72px 72px;
+  mask-image:radial-gradient(ellipse 85% 85% at 50% 50%,black 30%,transparent 100%);
+  pointer-events:none;
+}
+.hero::after{content:none}
+.hero-orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px)}
+.hero-orb-1{width:600px;height:600px;top:-130px;right:-100px;background:rgba(255,135,22,.16);animation:orbF 13s ease-in-out infinite}
+.hero-orb-2{width:450px;height:450px;bottom:-120px;left:-80px;background:rgba(200,70,0,.11);animation:orbF 17s ease-in-out infinite reverse 2s}
+.hero-orb-3{width:220px;height:220px;top:42%;left:28%;background:rgba(255,160,30,.06);animation:orbF 8s ease-in-out infinite 1.5s}
+@keyframes orbF{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(28px,-20px) scale(1.04)}66%{transform:translate(-14px,24px) scale(.97)}}
+.hero-deco-line{position:absolute;pointer-events:none}
+.hdl-1{width:1px;height:200px;background:linear-gradient(to bottom,transparent,rgba(255,135,22,.4),transparent);right:22%;top:14%;transform:rotate(16deg);animation:ldPulse 3.5s ease-in-out infinite}
+.hdl-2{width:160px;height:1px;background:linear-gradient(to right,transparent,rgba(255,135,22,.25),transparent);left:14%;bottom:30%;animation:ldPulse 5s ease-in-out infinite 2s}
+@keyframes ldPulse{0%,100%{opacity:.35}50%{opacity:.9}}
+
+.hero-content{position:relative;z-index:1;max-width:860px;margin:0 auto}
+
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(255,135,22,.1);
+  border:1px solid rgba(255,135,22,.28);
+  color:rgba(255,150,150,.9);
+  font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  padding:9px 22px;border-radius:50px;
+  margin-bottom:18px;
+  animation:fadeUp .7s .1s both;
+}
+.blink{width:7px;height:7px;background:var(--pr);border-radius:50%;box-shadow:0 0 8px var(--pr);display:inline-block;animation:blinkR 2s infinite}
+@keyframes blinkR{0%,100%{opacity:1;box-shadow:0 0 8px var(--pr)}50%{opacity:.3;box-shadow:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+.hero-title{
+  font-family:'Syne',sans-serif;font-weight:900;
+  font-size:clamp(34px,5.5vw,64px);
+  color:#fff;line-height:.95;
+  margin-bottom:10px;letter-spacing:-2px;
+  animation:fadeUp .7s .2s both;
+}
+.hero-title .orange{
+  display:block;color:transparent;
+  -webkit-text-stroke:2px var(--pr);
+  filter:drop-shadow(0 0 24px rgba(255,135,22,.45));
+}
+.hero-sep{display:flex;align-items:center;gap:12px;justify-content:center;margin:14px 0;animation:fadeUp .7s .28s both}
+.hero-sep-line{width:54px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,135,22,.5))}
+.hero-sep-line.r{background:linear-gradient(270deg,transparent,rgba(255,135,22,.5))}
+.hero-sep-dot{width:5px;height:5px;background:var(--pr);border-radius:50%}
+
+.hero-sub{
+  font-size:13.5px;color:rgba(255,255,255,.42);
+  max-width:480px;margin:0 auto 24px;
+  line-height:1.85;animation:fadeUp .7s .32s both;
+}
+
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;animation:fadeUp .7s .4s both}
+.btn-red{
+  display:inline-flex;align-items:center;gap:10px;
+  background:linear-gradient(135deg,var(--pr),var(--prd));
+  color:#fff;font-weight:700;font-size:14px;
+  padding:15px 32px;border-radius:13px;text-decoration:none;
+  box-shadow:0 8px 28px rgba(255,90,0,.4),inset 0 1px 0 rgba(255,255,255,.12);
+  transition:.3s;border:none;cursor:pointer;
+}
+.btn-red:hover{transform:translateY(-4px);box-shadow:0 18px 46px rgba(255,90,0,.52)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  color:rgba(255,255,255,.8);font-weight:600;font-size:14px;
+  padding:15px 32px;border-radius:13px;text-decoration:none;transition:.3s;
+  backdrop-filter:blur(8px);
+}
+.btn-ghost:hover{background:rgba(255,255,255,.11);border-color:rgba(255,135,22,.4);transform:translateY(-4px)}
+
+.stats-bar{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border:1px solid rgba(255,135,22,.15);
+  border-radius:18px;overflow:hidden;
+  background:rgba(255,255,255,.03);backdrop-filter:blur(12px);
+  max-width:760px;margin:0 auto;
+  animation:fadeUp .7s .5s both;
+}
+.stat-item{
+  padding:16px 12px;text-align:center;
+  border-right:1px solid rgba(255,135,22,.1);transition:.25s;
+}
+.stat-item:last-child{border-right:none}
+.stat-item:hover{background:rgba(255,135,22,.05)}
+.stat-val{font-family:'Syne',sans-serif;font-size:clamp(20px,2.5vw,28px);font-weight:900;color:#fff;line-height:1}
+.stat-val em{color:var(--pr);font-style:normal}
+.stat-lbl{font-size:10px;color:rgba(255,255,255,.3);margin-top:6px;text-transform:uppercase;letter-spacing:.8px}
+
+/* ── FORMATS ── */
+.sec{background:#fff;padding:80px 5%}
+.sec-inner{max-width:1100px;margin:0 auto}
+.sec-head{text-align:center;margin-bottom:52px}
+.sec-tag{
+  display:inline-block;
+  background:var(--prl);color:var(--pr);
+  font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+  padding:5px 16px;border-radius:20px;margin-bottom:14px;
+}
+.sec-title{
+  font-family:'Syne',sans-serif;font-weight:900;
+  font-size:clamp(26px,3.8vw,44px);line-height:1.05;
+  color:var(--dk);letter-spacing:-1.5px;
+}
+.sec-title span{color:var(--pr)}
+.sec-sub{font-size:14px;color:var(--gr);margin-top:12px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7}
+
+.fmts{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:18px}
+.fmt{
+  border:1.5px solid var(--bd);
+  border-radius:18px;padding:28px 24px;
+  transition:.35s;position:relative;overflow:hidden;
+  background:#fff;
+}
+.fmt::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 0%,rgba(255,135,22,.06) 0%,transparent 55%);
+  opacity:0;transition:.35s;
+}
+.fmt::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--pr),var(--pr));
+  transform:scaleX(0);transform-origin:left;transition:.35s;
+}
+.fmt:hover{border-color:rgba(255,135,22,.5);transform:translateY(-5px);box-shadow:0 18px 48px rgba(255,90,0,.1)}
+.fmt:hover::before{opacity:1}
+.fmt:hover::after{transform:scaleX(1)}
+.fmt.feat{border-color:var(--pr);box-shadow:0 6px 28px rgba(255,90,0,.1)}
+.fmt-icon{
+  width:46px;height:46px;border-radius:12px;
+  background:linear-gradient(135deg,var(--pr),var(--prd));
+  color:#fff;font-size:18px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:16px;
+  box-shadow:0 4px 14px rgba(255,90,0,.3);
+}
+.fmt-badge{
+  position:absolute;top:14px;right:14px;
+  background:var(--pr);color:#fff;
+  font-size:9px;font-weight:800;padding:3px 10px;border-radius:20px;
+}
+.fmt-name{font-family:'Syne',sans-serif;font-size:18px;font-weight:900;color:var(--dk);margin-bottom:10px;letter-spacing:-.5px}
+.fmt-desc{font-size:12.5px;color:var(--gr);line-height:1.75;margin-bottom:18px}
+.fmt-specs{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:22px}
+.fmt-specs li{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--mid)}
+.fmt-specs li i{color:var(--pr);width:12px;font-size:10px}
+.fmt-price{font-family:'Syne',sans-serif;font-size:24px;font-weight:900;color:var(--pr);letter-spacing:-.5px}
+.fmt-price span{font-size:12px;font-weight:500;color:rgba(255,255,255,.3);font-family:'DM Sans',sans-serif}
+
+/* ── STEPS ── */
+.steps-sec{background:linear-gradient(135deg,#0f0f12,#1a0505);padding:80px 5%;position:relative;overflow:hidden}
+.steps-sec::before{content:none}
+.steps-glow{position:absolute;width:500px;height:250px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(255,135,22,.07) 0%,transparent 70%);pointer-events:none}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:28px;max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.steps::before{
+  content:'';position:absolute;
+  top:28px;left:14%;right:14%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,135,22,.2),rgba(255,135,22,.35),rgba(255,135,22,.2),transparent);
+}
+.step{text-align:center}
+.step-n{
+  width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,var(--pr),var(--prd));
+  color:#fff;font-family:'Syne',sans-serif;font-size:20px;font-weight:900;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;
+  box-shadow:0 6px 20px rgba(255,90,0,.4),0 0 0 5px rgba(255,135,22,.08);
+}
+.step-t{font-family:'Syne',sans-serif;font-weight:800;font-size:15px;color:#fff;margin-bottom:7px}
+.step-d{font-size:12.5px;color:rgba(255,255,255,.35);line-height:1.7}
+
+/* ── PRICING ── */
+.pricing-sec{background:#f8f8fb;padding:80px 5%}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;max-width:940px;margin:0 auto}
+.pc{
+  background:#fff;
+  border:1.5px solid var(--bd);
+  border-radius:20px;padding:32px 26px;
+  text-align:center;position:relative;transition:.35s;
+}
+.pc.hot{border-color:var(--pr);box-shadow:0 8px 32px rgba(255,90,0,.1)}
+.pc.hot::before{
+  content:'⭐ RECOMMANDÉ';position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  background:linear-gradient(135deg,var(--pr),var(--prd));
+  color:#fff;font-size:9px;font-weight:800;padding:4px 14px;border-radius:20px;
+  letter-spacing:.5px;white-space:nowrap;box-shadow:0 4px 12px rgba(255,90,0,.3);
+}
+.pc:hover{transform:translateY(-5px);box-shadow:0 16px 44px rgba(255,90,0,.1);border-color:var(--pr)}
+.pc-plan{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gr);margin-bottom:14px}
+.pc-price{font-family:'Syne',sans-serif;font-size:46px;font-weight:900;color:var(--dk);line-height:1;letter-spacing:-2px}
+.pc-price em{font-size:14px;font-weight:500;color:var(--gr);font-family:'DM Sans',sans-serif;font-style:normal;letter-spacing:0}
+.pc-period{font-size:11.5px;color:var(--gr);margin-bottom:24px;margin-top:4px}
+.pc-feats{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px;text-align:left}
+.pc-feats li{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--mid)}
+.pc-feats li i{color:var(--pr);font-size:10px;width:13px}
+.pc-btn{width:100%;padding:12px;border-radius:50px;font-weight:700;font-size:13px;border:none;cursor:pointer;transition:.3s;text-decoration:none;display:block;text-align:center}
+.pc-btn.solid{background:linear-gradient(135deg,var(--pr),var(--prd));color:#fff;box-shadow:0 5px 18px rgba(255,90,0,.3)}
+.pc-btn.solid:hover{box-shadow:0 10px 28px rgba(255,90,0,.48);transform:translateY(-2px)}
+.pc-btn.line{background:transparent;border:1.5px solid var(--bd);color:var(--dk)}
+.pc-btn.line:hover{border-color:var(--pr);color:var(--pr)}
+
+/* ── FORM ── */
+.form-sec{padding:80px 5%}
+.form-wrap{max-width:660px;margin:0 auto}
+.form-card{
+  background:#fff;
+  border:1.5px solid var(--bd);
+  border-radius:20px;padding:40px;
+  box-shadow:0 8px 40px rgba(0,0,0,.06);
+  position:relative;overflow:hidden;
+}
+.form-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--pr),var(--pr),var(--pr),transparent);
+}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.fg{margin-bottom:16px}
+.fl{font-size:11.5px;font-weight:700;color:var(--dk);margin-bottom:7px;display:block;letter-spacing:.3px}
+.req{color:var(--pr)}
+.fi,.fs,.ft{
+  width:100%;padding:11px 14px;
+  border:1.5px solid var(--bd);
+  border-radius:10px;font-size:13px;
+  font-family:'DM Sans',sans-serif;
+  color:var(--dk);background:#fff;
+  transition:.2s;
+}
+.fi:focus,.fs:focus,.ft:focus{outline:none;border-color:var(--pr);box-shadow:0 0 0 3px rgba(255,135,22,.07)}
+.ft{resize:vertical;min-height:100px;line-height:1.6}
+.hint{font-size:11px;color:var(--gr);margin-top:5px;display:block}
+.upload-box{
+  border:2px dashed var(--bd);
+  border-radius:12px;padding:26px;
+  text-align:center;cursor:pointer;transition:.25s;
+  background:#fafafa;
+}
+.upload-box:hover{border-color:var(--pr);background:var(--prl)}
+.upload-ico{font-size:26px;color:var(--gr);margin-bottom:9px}
+.upload-txt{font-size:13px;color:var(--mid);font-weight:600}
+.divider{border:none;border-top:1px solid var(--bd);margin:22px 0}
+.submit-btn{
+  width:100%;padding:14px;
+  background:linear-gradient(135deg,var(--pr),var(--prd));
+  color:#fff;font-weight:700;font-size:14px;
+  border:none;border-radius:50px;cursor:pointer;transition:.3s;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  box-shadow:0 7px 22px rgba(255,90,0,.35);
+  font-family:'DM Sans',sans-serif;
+}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(255,90,0,.48)}
+.success{display:none;text-align:center;padding:44px 28px}
+.success-ico{font-size:48px;margin-bottom:16px}
+.success-t{font-family:'Syne',sans-serif;font-size:24px;font-weight:900;color:var(--dk);margin-bottom:10px;letter-spacing:-.5px}
+.success-s{font-size:14px;color:var(--gr)}
+
+/* ── FAQ ── */
+.faq-sec{background:#f8f8fb;padding:80px 5%}
+.faq-list{max-width:660px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
+.faq-item{
+  background:#fff;
+  border:1.5px solid var(--bd);
+  border-radius:14px;overflow:hidden;transition:.2s;
+}
+.faq-item.open{border-color:var(--pr)}
+.faq-q{padding:18px 22px;font-weight:600;font-size:14px;color:var(--dk);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.faq-q i{color:var(--pr);transition:.3s;flex-shrink:0}
+.faq-item.open .faq-q i{transform:rotate(180deg)}
+.faq-a{padding:0 22px 18px;font-size:13px;color:var(--gr);line-height:1.7;display:none}
+.faq-item.open .faq-a{display:block}
+
+/* ── CTA FINAL ── */
+.cta-sec{background:linear-gradient(135deg,#0f0f12,#1a0505,#2a0808);padding:80px 5%;text-align:center;position:relative;overflow:hidden}
+.cta-sec::before{content:none}
+.cta-sec::after{content:'';position:absolute;width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,135,22,.1) 0%,transparent 65%);pointer-events:none}
+.cta-sec h2{font-family:'Syne',sans-serif;font-size:clamp(28px,4.5vw,52px);font-weight:900;color:#fff;margin-bottom:14px;letter-spacing:-1.5px;line-height:1.05;position:relative;z-index:1}
+.cta-sec h2 span{color:var(--pr)}
+.cta-sec p{font-size:15px;color:rgba(255,255,255,.4);margin-bottom:32px;max-width:380px;margin-left:auto;margin-right:auto;position:relative;z-index:1}
+.btn-red{
+  display:inline-flex;align-items:center;gap:10px;
+  background:linear-gradient(135deg,var(--pr),var(--prd));
+  color:#fff;font-weight:700;font-size:14px;
+  padding:14px 34px;border-radius:50px;
+  text-decoration:none;
+  box-shadow:0 7px 28px rgba(255,90,0,.4);
+  transition:.3s;border:none;cursor:pointer;
+  position:relative;z-index:1;
+}
+.btn-red:hover{transform:translateY(-3px);box-shadow:0 16px 44px rgba(255,90,0,.55)}
+
+footer{background:var(--dk2);padding:28px 5%;text-align:center;font-size:12px;color:rgba(255,255,255,.3)}
+
+@media(max-width:768px){
+  .steps::before{display:none}
+  .hero-title{font-size:clamp(28px,6vw,44px);letter-spacing:-1px;word-break:break-word}
+  .hero-sub{font-size:13px}
+  .cta-row{flex-direction:column;align-items:center;gap:10px}
+  .btn-red,.btn-ghost{width:100%;max-width:280px;text-align:center;justify-content:center}
+}
+@media(max-width:640px){
+  .frow{grid-template-columns:1fr}
+  .form-card{padding:24px 16px}
+  .stat-item{border-right:none;border-bottom:1px solid rgba(255,135,22,.08)}
+  .stat-item:last-child{border-bottom:none}
+  .stats-bar{flex-direction:column;gap:0}
+  .hero-title{font-size:clamp(22px,7vw,36px);line-height:1.15}
+  .fmt-grid{grid-template-columns:1fr}
+  .pricing-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .hero{padding:60px 5% 50px}
+  .hero-badge{font-size:10px;padding:7px 14px}
+  .hero-title{font-size:clamp(20px,6vw,30px)}
+  .stat-val{font-size:clamp(18px,4vw,24px)}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <div>
+      <span class="nav-logo-text">KLIKOO<span>.</span></span>
+      <span class="nav-tagline">Shopping Store</span>
+    </div>
+  </a>
+  <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i> Retour </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+  <div class="hero-deco-line hdl-1"></div>
+  <div class="hero-deco-line hdl-2"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="blink"></span> Format Vidéo — Premium</div>
+    <h1 class="hero-title">Votre pub<span class="orange">vidéo vue</span></h1>
+    <div class="hero-sep">
+      <div class="hero-sep-line"></div>
+      <div class="hero-sep-dot"></div>
+      <div class="hero-sep-line r"></div>
+    </div>
+    <p class="hero-sub">Diffusez votre spot vidéo sur KLIKOO. Format immersif, audience qualifiée, résultats mesurables dès la première semaine.</p>
+    <div class="cta-row">
+      <a href="#formulaire" class="btn-red"><i class="fas fa-rocket"></i> Lancer ma campagne</a>
+      <a href="#formats" class="btn-ghost"><i class="fas fa-play"></i> Voir les formats</a>
+    </div>
+    <div class="stats-bar">
+      <div class="stat-item"><div class="stat-val">10K<em>+</em></div><div class="stat-lbl">Visiteurs/mois</div></div>
+      <div class="stat-item"><div class="stat-val">85<em>%</em></div><div class="stat-lbl">Taux de vue</div></div>
+      <div class="stat-item"><div class="stat-val">24<em>h</em></div><div class="stat-lbl">Mise en ligne</div></div>
+      <div class="stat-item"><div class="stat-val">3<em>x</em></div><div class="stat-lbl">Plus d'impact vs image</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATS -->
+<section class="sec" id="formats">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-tag">Nos Formats</div>
+      <h2 class="sec-title">3 formats <span>vidéo</span></h2>
+      <p class="sec-sub">Choisissez le format adapté à votre objectif et votre budget</p>
+    </div>
+    <div class="fmts">
+      <div class="fmt">
+        <div class="fmt-icon"><i class="fas fa-film"></i></div>
+        <div class="fmt-name">Pre-Roll Vidéo</div>
+        <div class="fmt-desc">Votre vidéo en autoplay silencieux dès l'arrivée sur la page. 100% visible avant tout.</div>
+        <ul class="fmt-specs">
+          <li><i class="fas fa-clock"></i> 15 à 30 secondes</li>
+          <li><i class="fas fa-expand"></i> 16:9 pleine largeur</li>
+          <li><i class="fas fa-volume-mute"></i> Autoplay silencieux</li>
+          <li><i class="fas fa-mouse-pointer"></i> Cliquable vers votre site</li>
+          <li><i class="fas fa-mobile-alt"></i> Mobile & desktop</li>
+        </ul>
+        <div class="fmt-price">350 DH <span>/ semaine</span></div>
+      </div>
+      <div class="fmt feat">
+        <div class="fmt-badge">🔥 POPULAIRE</div>
+        <div class="fmt-icon" style="background:linear-gradient(135deg,var(--pr),var(--prd))"><i class="fas fa-tv"></i></div>
+        <div class="fmt-name">Banner Vidéo</div>
+        <div class="fmt-desc">Bannière vidéo animée dans la page produits. Vue par tous les visiteurs qui scrollent.</div>
+        <ul class="fmt-specs">
+          <li><i class="fas fa-clock"></i> 15 à 60 secondes</li>
+          <li><i class="fas fa-expand"></i> 16:9 ou carré</li>
+          <li><i class="fas fa-redo"></i> Lecture en boucle</li>
+          <li><i class="fas fa-mouse-pointer"></i> Bouton CTA personnalisé</li>
+          <li><i class="fas fa-chart-line"></i> Rapport vues + clics</li>
+        </ul>
+        <div class="fmt-price" style="color:var(--pr)">500 DH <span>/ semaine</span></div>
+      </div>
+      <div class="fmt">
+        <div class="fmt-icon" style="background:linear-gradient(135deg,#6c63ff,#4a41dd)"><i class="fas fa-window-maximize"></i></div>
+        <div class="fmt-name">Vidéo Popup</div>
+        <div class="fmt-desc">Popup vidéo après 3 secondes. Impact maximal, taux de mémorisation élevé.</div>
+        <ul class="fmt-specs">
+          <li><i class="fas fa-clock"></i> 10 à 20 secondes</li>
+          <li><i class="fas fa-expand"></i> 16:9 centré</li>
+          <li><i class="fas fa-times"></i> Fermable</li>
+          <li><i class="fas fa-mouse-pointer"></i> Lien cliquable inclus</li>
+          <li><i class="fas fa-eye"></i> 1 affichage / visiteur</li>
+        </ul>
+        <div class="fmt-price">450 DH <span>/ semaine</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÉTAPES -->
+<section class="steps-sec">
+  <div class="sec-head" style="position:relative;z-index:1;margin-bottom:48px">
+    <div class="sec-tag">Comment ça marche</div>
+    <h2 class="sec-title">Simple. <span>Rapide.</span> Efficace.</h2>
+    <p class="sec-sub">En ligne en moins de 24h</p>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div class="step-t">Formulaire</div><div class="step-d">Choisissez format et durée. Envoyez votre vidéo.</div></div>
+    <div class="step"><div class="step-n">2</div><div class="step-t">Validation 24h</div><div class="step-d">Notre équipe vérifie et confirme la mise en ligne.</div></div>
+    <div class="step"><div class="step-n">3</div><div class="step-t">Vidéo Live</div><div class="step-d">Des milliers de visiteurs voient votre pub.</div></div>
+    <div class="step"><div class="step-n">4</div><div class="step-t">Résultats</div><div class="step-d">Rapport vues, clics et engagement chaque semaine.</div></div>
+  </div>
+</section>
+
+<!-- TARIFS -->
+<section class="pricing-sec" id="tarifs">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-tag">Tarifs</div>
+      <h2 class="sec-title">Prix <span>clairs</span></h2>
+      <p class="sec-sub">Rapport de performance + support inclus dans tous les forfaits</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pc">
+        <div class="pc-plan">Pre-Roll</div>
+        <div class="pc-price">350 <em>DH</em></div>
+        <div class="pc-period">par semaine</div>
+        <ul class="pc-feats">
+          <li><i class="fas fa-check"></i> Vidéo 15-30 secondes</li>
+          <li><i class="fas fa-check"></i> Pleine largeur</li>
+          <li><i class="fas fa-check"></i> Autoplay silencieux</li>
+          <li><i class="fas fa-check"></i> Rapport vues</li>
+          <li><i class="fas fa-check"></i> Lien cliquable</li>
+        </ul>
+        <a href="#formulaire" class="pc-btn line">Choisir</a>
+      </div>
+      <div class="pc hot">
+        <div class="pc-plan">Banner Vidéo</div>
+        <div class="pc-price">500 <em>DH</em></div>
+        <div class="pc-period">par semaine</div>
+        <ul class="pc-feats">
+          <li><i class="fas fa-check"></i> Vidéo jusqu'à 60 secondes</li>
+          <li><i class="fas fa-check"></i> Lecture en boucle</li>
+          <li><i class="fas fa-check"></i> Bouton CTA personnalisé</li>
+          <li><i class="fas fa-check"></i> Rapport vues + clics</li>
+          <li><i class="fas fa-check"></i> Support prioritaire</li>
+        </ul>
+        <a href="#formulaire" class="pc-btn solid">Choisir</a>
+      </div>
+      <div class="pc">
+        <div class="pc-plan">Vidéo Popup</div>
+        <div class="pc-price">450 <em>DH</em></div>
+        <div class="pc-period">par semaine</div>
+        <ul class="pc-feats">
+          <li><i class="fas fa-check"></i> Vidéo 10-20 secondes</li>
+          <li><i class="fas fa-check"></i> 1 affichage/visiteur</li>
+          <li><i class="fas fa-check"></i> Impact maximal</li>
+          <li><i class="fas fa-check"></i> Rapport impressions</li>
+          <li><i class="fas fa-check"></i> Lien cliquable</li>
+        </ul>
+        <a href="#formulaire" class="pc-btn line">Choisir</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULAIRE -->
+<section class="form-sec" id="formulaire">
+  <div class="form-wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Réserver</div>
+      <h2 class="sec-title">Déposez votre <span>vidéo</span></h2>
+      <p class="sec-sub">Remplissez et nous vous contactons sous 24h</p>
+    </div>
+    <div class="form-card" id="formCard">
+      <div class="frow">
+        <div class="fg"><label class="fl">Nom <span class="req">*</span></label><input class="fi" id="fName" type="text" placeholder="Mohammed Alami"></div>
+        <div class="fg"><label class="fl">WhatsApp <span class="req">*</span></label><input class="fi" id="fPhone" type="tel" placeholder="+212 6XX XXX XXX"></div>
+      </div>
+      <div class="fg"><label class="fl">Email <span class="req">*</span></label><input class="fi" id="fEmail" type="email" placeholder="contact@votreentreprise.ma"></div>
+      <div class="fg"><label class="fl">Marque / Entreprise <span class="req">*</span></label><input class="fi" id="fBrand" type="text" placeholder="Nom de votre marque"></div>
+      <hr class="divider">
+      <div class="fg">
+        <label class="fl">Format vidéo <span class="req">*</span></label>
+        <select class="fs" id="fFormat">
+          <option value="">— Choisissez un format —</option>
+          <option value="pre-roll">Pre-Roll Vidéo — 350 DH/sem</option>
+          <option value="banner">Banner Vidéo — 500 DH/sem ⭐</option>
+          <option value="popup">Vidéo Popup — 450 DH/sem</option>
+          <option value="pack">Pack Complet (3 formats) — 1100 DH/sem</option>
+        </select>
+      </div>
+      <div class="frow">
+        <div class="fg"><label class="fl">Date de début <span class="req">*</span></label><input class="fi" id="fStart" type="date"></div>
+        <div class="fg">
+          <label class="fl">Durée <span class="req">*</span></label>
+          <select class="fs" id="fDuration">
+            <option value="">— Choisissez —</option>
+            <option value="1">1 semaine</option>
+            <option value="2">2 semaines</option>
+            <option value="4">1 mois</option>
+            <option value="8">2 mois</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg"><label class="fl">Lien de destination <span class="req">*</span></label><input class="fi" id="fUrl" type="url" placeholder="https://votresite.ma"></div>
+      <hr class="divider">
+      <div class="fg">
+        <label class="fl">Fichier vidéo</label>
+        <div class="upload-box" onclick="document.getElementById('fFile').click()">
+          <div class="upload-ico"><i class="fas fa-cloud-upload-alt"></i></div>
+          <div class="upload-txt" id="upTxt">Cliquez pour envoyer votre vidéo</div>
+          <span class="hint">MP4, MOV — max 100 Mo — 16:9 recommandé</span>
+        </div>
+        <input type="file" id="fFile" accept="video/*" style="display:none" onchange="handleUp(this)">
+        <span class="hint">Ou mettez un lien Google Drive / WeTransfer dans le message</span>
+      </div>
+      <div class="fg"><label class="fl">Message / lien vidéo</label><textarea class="ft" id="fMsg" placeholder="Lien vers votre vidéo, objectifs, informations supplémentaires..."></textarea></div>
+      <button class="submit-btn" onclick="submitForm()"><i class="fas fa-paper-plane"></i> Envoyer ma demande</button>
+    </div>
+    <div class="success" id="successMsg">
+      <div class="success-ico">🎬</div>
+      <div class="success-t">Demande envoyée !</div>
+      <div class="success-s">Nous vous contactons sous 24h pour confirmer la mise en ligne.</div>
+      <a href="index.html" style="display:inline-block;margin-top:20px;color:var(--pr);font-weight:700;text-decoration:none"><i class="fas fa-arrow-left"></i> Retour au site</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-tag">FAQ</div>
+      <h2 class="sec-title">Questions <span>fréquentes</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Quels formats vidéo sont acceptés ? <i class="fas fa-chevron-down"></i></div><div class="faq-a">MP4 et MOV, résolution minimum 720p (HD). Format 16:9 recommandé.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Combien de temps pour mettre ma vidéo en ligne ? <i class="fas fa-chevron-down"></i></div><div class="faq-a">Votre vidéo est en ligne sous 24h après paiement et réception du fichier.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Puis-je modifier ma vidéo en cours de campagne ? <i class="fas fa-chevron-down"></i></div><div class="faq-a">Oui, une modification gratuite par semaine. Envoyez la nouvelle vidéo par WhatsApp.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Est-ce que j'ai des statistiques ? <i class="fas fa-chevron-down"></i></div><div class="faq-a">Oui, rapport hebdomadaire avec vues, clics et taux d'engagement.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Comment se fait le paiement ? <i class="fas fa-chevron-down"></i></div><div class="faq-a">Virement bancaire ou espèces. Coordonnées envoyées après validation de votre demande.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-sec">
+  <h2>Prêt à booster<br>votre <span>visibilité</span> ?</h2>
+  <p>Rejoignez les marques qui font confiance à KLIKOO.</p>
+  <a href="#formulaire" class="btn-red" style="display:inline-flex"><i class="fas fa-rocket"></i> Lancer ma campagne vidéo</a>
+</section>
+
+<footer>© 2025 KLIKOO Store — Tous droits réservés</footer>
+
+<!-- ══ RADIO + PLAYLIST ══ -->
+<link rel="stylesheet" href="radio.css">
+<button id="radioToggle" onclick="toggleRadioBar()" title="Radio KLIKOO">
+  <i class="fas fa-music" id="radioToggleIcon"></i>
+</button>
+<div id="radioBar">
+  <div class="rb-label">
+    <div class="rb-dot" id="rbDot"></div>
+    Radio
+  </div>
+  <div class="rb-disc" id="rbDisc">🎵</div>
+  <div class="rb-info">
+    <div class="rb-title" id="rbTitle">Aucune piste</div>
+    <div class="rb-artist" id="rbArtist">Ajoutez des chansons via le Dashboard</div>
+  </div>
+  <div class="rb-progress-wrap">
+    <div class="rb-progress-bar" id="rbProgressBar" onclick="rbSeek(event)">
+      <div class="rb-progress-fill" id="rbProgressFill"></div>
+    </div>
+    <div class="rb-times">
+      <span id="rbCurrent">0:00</span>
+      <span id="rbDuration">0:00</span>
+    </div>
+  </div>
+  <div class="rb-controls">
+    <button class="rb-btn" onclick="rbPrev()" title="Précédent"><i class="fas fa-step-backward"></i></button>
+    <button class="rb-btn-play" id="rbPlayBtn" onclick="rbTogglePlay()"><i class="fas fa-play" id="rbPlayIcon"></i></button>
+    <button class="rb-btn" onclick="rbNext()" title="Suivant"><i class="fas fa-step-forward"></i></button>
+    <button class="rb-btn" id="rbShuffleBtn" onclick="rbToggleShuffle()" title="Aléatoire"><i class="fas fa-random"></i></button>
+  </div>
+  <div class="rb-vol">
+    <i class="fas fa-volume-down"></i>
+    <input type="range" class="rb-vol-slider" id="rbVolSlider" min="0" max="100" value="80" oninput="rbSetVol(this.value)">
+    <i class="fas fa-volume-up"></i>
+  </div>
+  <button id="rbPlaylistBtn" onclick="rbTogglePlaylist()" title="Playlist">
+    <i class="fas fa-list"></i>
+  </button>
+</div>
+
+<!-- Playlist Panel -->
+<div id="rbPlaylistPanel">
+  <div class="rb-pl-header">
+    <div class="rb-pl-title">
+      <i class="fas fa-music"></i> Playlist
+      <span class="rb-pl-count" id="rbPlCount">0 pistes</span>
+    </div>
+    <button class="rb-pl-close" onclick="rbTogglePlaylist()" title="Fermer"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="rb-pl-search-wrap">
+    <input class="rb-pl-search" id="rbPlSearch" type="text" placeholder="Rechercher une piste..." oninput="rbRenderPlaylist(this.value)">
+  </div>
+  <div class="rb-pl-list" id="rbPlList"></div>
+</div>
+<script src="radio.js"></script>
+
+<script>
+// Particles
+(function(){
+  var c=document.getElementById('pts');
+  for(var i=0;i<20;i++){
+    var s=document.createElement('span');
+    s.style.cssText='left:'+Math.random()*100+'%;animation-duration:'+(6+Math.random()*10)+'s;animation-delay:'+(-Math.random()*10)+'s';
+    c.appendChild(s);
+  }
+})();
+
+function toggleFaq(el){el.parentElement.classList.toggle('open')}
+function handleUp(input){if(input.files&&input.files[0])document.getElementById('upTxt').textContent='✅ '+input.files[0].name}
+
+function submitForm(){
+  var n=document.getElementById('fName').value.trim();
+  var p=document.getElementById('fPhone').value.trim();
+  var e=document.getElementById('fEmail').value.trim();
+  var b=document.getElementById('fBrand').value.trim();
+  var f=document.getElementById('fFormat').value;
+  var s=document.getElementById('fStart').value;
+  var d=document.getElementById('fDuration').value;
+  var u=document.getElementById('fUrl').value.trim();
+  if(!n||!p||!e||!b||!f||!s||!d||!u){alert('⚠️ Veuillez remplir tous les champs obligatoires.');return}
+  try{
+    var reqs=JSON.parse(localStorage.getItem('klikoo_video_ads')||'[]');
+    reqs.push({id:'vid-'+Date.now(),name:n,phone:p,email:e,brand:b,format:f,start:s,duration:d,url:u,message:document.getElementById('fMsg').value,status:'pending',createdAt:new Date().toISOString()});
+    localStorage.setItem('klikoo_video_ads',JSON.stringify(reqs));
+  }catch(e){}
+  document.getElementById('formCard').style.display='none';
+  document.getElementById('successMsg').style.display='block';
+  window.scrollTo({top:document.getElementById('formulaire').offsetTop-80,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KLIKOO — Admin Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="login-admin.css">
+</head>
+<body>
+
+<div class="login-card">
+  <div class="login-logo">
+    <div class="login-logo-name">KLIKOO<span>.</span></div>
+    <div class="login-logo-tag">Espace Administration</div>
+  </div>
+
+  <div class="login-title">Connexion Admin</div>
+  <div class="login-subtitle">Accès réservé aux administrateurs KLIKOO</div>
+
+  <div class="error-msg" id="errorMsg">
+    <i class="fas fa-exclamation-circle"></i>
+    <span id="errorText">Identifiants incorrects. Réessayez.</span>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Identifiant</label>
+    <div class="form-input-wrap">
+      <i class="fas fa-user form-input-icon"></i>
+      <input type="text" class="form-input" id="username" placeholder="admin" autocomplete="username">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Mot de passe</label>
+    <div class="form-input-wrap">
+      <i class="fas fa-lock form-input-icon"></i>
+      <input type="password" class="form-input" id="password" placeholder="••••••••" autocomplete="current-password">
+      <button class="form-input-toggle" onclick="togglePassword()" id="toggleBtn" type="button">
+        <i class="fas fa-eye" id="eyeIcon"></i>
+      </button>
+    </div>
+  </div>
+
+  <button class="btn-login" onclick="doLogin()">
+    <i class="fas fa-sign-in-alt"></i> Se connecter
+  </button>
+
+  <div class="login-footer">
+    <a href="index.html"><i class="fas fa-arrow-left"></i> Retour au site</a>
+  </div>
+
+  <div class="demo-hint">
+    💡 Identifiants par défaut : <strong>admin</strong> / <strong>klikoo2025</strong>
+  </div>
+</div>  <script src="login-admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff8716">
+  <meta name="mobile-web-app-capable" content="yes">
+  <!-- iOS App-like -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="KLIKOO">
+  <link rel="apple-touch-icon" href="icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="icon-192x192.png">
+  <!-- Splash screens iOS -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- MS Tiles -->
+  <meta name="msapplication-TileColor" content="#ff8716">
+  <meta name="msapplication-TileImage" content="icon-144x144.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>klikoo — Votre Boutique en Ligne au Maroc</title>
+
+<!-- FAVICON  -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="ads.css">
+</head>
+<body>
+<!-- ▶ BANNIÈRE TOP -->
+<div id="adTopBanner"></div>
+<!-- ▶ POPUP -->
+<div id="adPopup"></div>
+<!-- ▶ SIDEBARS FIXES SUR LES CÔTÉS -->
+<div id="adSideLeft" class="ad-side-fixed ad-side-fixed-left"></div>
+<div id="adSideRight" class="ad-side-fixed ad-side-fixed-right"></div>
+<div class="ann-bar">
+  <div class="ann-scroll">
+    <span class="ann-item"><i class="fas fa-tag"></i> Nouvelles Offres &mdash; Promotions du moment !</span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-truck"></i> Livraison gratuite d&egrave;s <b>300 DH</b></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-phone"></i> <a href="tel:+212774011555">+212 774 011 555</a></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-shield-alt"></i> Paiement <b>100% S&eacute;curis&eacute;</b></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-undo"></i> Retour sous <b>3 jours</b></span><span class="ann-sep">✦</span>
+
+    <span class="ann-item"><i class="fas fa-tag"></i> Nouvelles Offres &mdash; Promotions du moment !</span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-truck"></i> Livraison gratuite d&egrave;s <b>300 DH</b></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-phone"></i> <a href="tel:+212774011555">+212 774 011 555</a></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-shield-alt"></i> Paiement <b>100% S&eacute;curis&eacute;</b></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-undo"></i> Retour sous <b>3 jours</b></span><span class="ann-sep">✦</span>
+
+    <span class="ann-item"><i class="fas fa-tag"></i> Nouvelles Offres &mdash; Promotions du moment !</span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-truck"></i> Livraison gratuite d&egrave;s <b>300 DH</b></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-phone"></i> <a href="tel:+212774011555">+212 774 011 555</a></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-shield-alt"></i> Paiement <b>100% S&eacute;curis&eacute;</b></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-undo"></i> Retour sous <b>3 jours</b></span><span class="ann-sep">✦</span>
+
+    <span class="ann-item"><i class="fas fa-tag"></i> Nouvelles Offres &mdash; Promotions du moment !</span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-truck"></i> Livraison gratuite d&egrave;s <b>300 DH</b></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-phone"></i> <a href="tel:+212774011555">+212 774 011 555</a></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-shield-alt"></i> Paiement <b>100% S&eacute;curis&eacute;</b></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-undo"></i> Retour sous <b>3 jours</b></span><span class="ann-sep">✦</span>
+  </div>
+</div>
+<header class="site-header" id="siteHeader">
+  <div class="h-top"><div class="container h-top-grid">
+    <a href="index.html" class="h-logo"><div class="h-logo-text"><span class="h-logo-name">KLIKOO<span style="color:var(--pr)">.</span></span><span class="h-logo-tagline">Shopping Store</span></div></a>
+    <div class="h-srch-wrap"><div class="h-srch"><input type="search" id="searchInput" placeholder="Rechercher un produit..." oninput="liveSearch()" onkeydown="if(event.key==='Enter')doSearch()"><button class="h-srch-btn" onclick="doSearch()"><i class="fas fa-search"></i> Rechercher</button></div></div>
+    <div class="h-actions">
+     
+      <a href="wishlist.html" class="h-icon-btn" title="Liste de souhaits"><i class="fa-regular fa-heart"></i><span class="h-badge" id="wishBadge">0</span></a>
+      <button class="h-icon-btn" onclick="openCart()" title="Panier"><i class="fa-solid fa-cart-shopping"></i><span class="h-badge" id="cartBadge">0</span></button>
+      <div class="h-auth" id="authButtons">
+        <a href="login.html" class="btn-login"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+        <a href="signup.html" class="btn-signup"><i class="fas fa-user-plus"></i> Inscription</a>
+      </div>
+      <div class="user-menu" id="userMenu" style="display:none">
+        <button class="user-btn" onclick="toggleUserDropdown()"><i class="fas fa-user-circle"></i><span id="userName">Utilisateur</span><i class="fas fa-chevron-down" style="font-size:10px"></i></button>
+        <div class="user-dropdown" id="userDropdown">
+          <div class="user-dropdown-header"><strong id="userFullName">Nom Utilisateur</strong><span id="userEmail">email@example.com</span></div>
+          <div class="user-dropdown-item" onclick="location.href='#'"><i class="fas fa-user"></i> Mon profil</div>
+          <div class="user-dropdown-item" onclick="location.href='#'"><i class="fas fa-box"></i> Mes commandes</div>
+          <div class="user-dropdown-item" onclick="location.href='wishlist.html'"><i class="fas fa-heart"></i> Ma liste</div>
+          <div class="user-dropdown-divider"></div>
+          <div class="user-dropdown-item" onclick="logout()"><i class="fas fa-sign-out-alt"></i> D&eacute;connexion</div>
+        </div>
+      </div>
+      <button class="hbg" onclick="toggleMob()"><span></span><span></span><span></span></button>
+    </div>
+  </div></div>
+  <nav class="h-nav"><div class="container nav-inner"><ul class="nav-ul">
+    <li class="act"><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+    <li><a href="about.html"><i class="fas fa-info-circle"></i> &Agrave; Propos</a></li>
+    <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+  </ul></div></nav>
+  <div class="mob-menu" id="mobMenu">
+    <ul class="mob-ul">
+      <li class="act"><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+      <li><a href="about.html"><i class="fas fa-info-circle"></i> &Agrave; Propos</a></li>
+      <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+    <div class="mob-auth-row" id="mobAuthButtons">
+      <a href="login.html" class="btn-login"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+      <a href="signup.html" class="btn-signup"><i class="fas fa-user-plus"></i> Inscription</a>
+    </div>
+    <div id="mobUserMenu" style="display:none"><ul class="mob-ul">
+      <li><a href="#"><i class="fas fa-user"></i> Mon profil</a></li>
+      <li><a href="#"><i class="fas fa-box"></i> Mes commandes</a></li>
+      <li><a href="wishlist.html"><i class="fas fa-heart"></i> Ma liste</a></li>
+      <li><a href="#" onclick="logout();return false"><i class="fas fa-sign-out-alt"></i> D&eacute;connexion</a></li>
+    </ul></div>
+  </div>
+</header>
+<!-- Barre de recherche mobile -->
+<div class="mob-search-bar">
+  <input type="search" id="searchInputMob" placeholder="Rechercher un produit..." oninput="document.getElementById('searchInput').value=this.value;liveSearch()" onkeydown="if(event.key==='Enter'){document.getElementById('searchInput').value=this.value;doSearch()}">
+  <button onclick="document.getElementById('searchInput').value=document.getElementById('searchInputMob').value;doSearch()"><i class="fas fa-search"></i> Rechercher</button>
+</div>
+<div class="qr-modal-ov" id="qrModal">
+  <div class="qr-modal-box">
+    <div class="qr-modal-head">
+      <button class="qr-modal-close" onclick="closeQRModal()"><i class="fas fa-xmark"></i></button>
+      <div class="qr-modal-title"><i class="fas fa-qrcode" style="margin-right:10px;color:var(--pr)"></i>QR Codes KLIKOO Store</div>
+      <div class="qr-modal-sub">Scannez pour acc&eacute;der &agrave; notre boutique, nous contacter ou nous suivre</div>
+    </div>
+    <div class="qr-modal-body">
+      <div class="qr-url-row"><input type="url" id="qrSiteUrl" placeholder="https://www.klikoo.ma" value="https://www.klikoo.ma"><button class="qr-url-btn" onclick="regenerateSiteQR()"><i class="fas fa-sync-alt"></i> Mettre &agrave; jour</button></div>
+      <div class="qr-cards-grid">
+        <div class="qr-mini-card"><div class="qr-mini-icon" style="background:linear-gradient(135deg,var(--pr),var(--prd))"><i class="fas fa-globe"></i></div><div class="qr-mini-label">Site Web</div><div class="qr-mini-wrap"><div id="qrWebsite"></div></div><div class="qr-mini-link" id="qrWebsiteUrl">www.klikoo.ma</div><div class="qr-mini-btns"><button class="qr-dl-btn" onclick="dlQR('qrWebsite','klikoo-website')"><i class="fas fa-download"></i> Sauvegarder</button><button class="qr-cp-btn" onclick="cpText('https://www.klikoo.ma')"><i class="fas fa-copy"></i></button></div></div>
+        <div class="qr-mini-card"><div class="qr-mini-icon" style="background:linear-gradient(135deg,#25d366,#1da851)"><i class="fab fa-whatsapp"></i></div><div class="qr-mini-label">WhatsApp</div><div class="qr-mini-wrap"><div id="qrWhatsapp"></div></div><div class="qr-mini-link">wa.me/212774011555</div><div class="qr-mini-btns"><button class="qr-dl-btn" onclick="dlQR('qrWhatsapp','klikoo-whatsapp')"><i class="fas fa-download"></i> Sauvegarder</button><button class="qr-cp-btn" onclick="cpText('https://wa.me/212774011555')"><i class="fas fa-copy"></i></button></div></div>
+        <div class="qr-mini-card"><div class="qr-mini-icon" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)"><i class="fas fa-phone"></i></div><div class="qr-mini-label">T&eacute;l&eacute;phone</div><div class="qr-mini-wrap"><div id="qrPhone"></div></div><div class="qr-mini-link">+212 774 011 555</div><div class="qr-mini-btns"><button class="qr-dl-btn" onclick="dlQR('qrPhone','klikoo-telephone')"><i class="fas fa-download"></i> Sauvegarder</button><button class="qr-cp-btn" onclick="cpText('+212774011555')"><i class="fas fa-copy"></i></button></div></div>
+        <div class="qr-mini-card"><div class="qr-mini-icon" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9)"><i class="fas fa-envelope"></i></div><div class="qr-mini-label">Email</div><div class="qr-mini-wrap"><div id="qrEmail"></div></div><div class="qr-mini-link">contact@klikoo.ma</div><div class="qr-mini-btns"><button class="qr-dl-btn" onclick="dlQR('qrEmail','klikoo-email')"><i class="fas fa-download"></i> Sauvegarder</button><button class="qr-cp-btn" onclick="cpText('contact@klikoo.ma')"><i class="fas fa-copy"></i></button></div></div>
+      </div>
+      <button class="qr-print-btn" onclick="window.print()"><i class="fas fa-print"></i> Imprimer tous les QR codes</button>
+    </div>
+  </div>
+</div>
+<section class="hero">
+  <div class="hero-bg-grid"></div><div class="hero-glow"></div><div class="hero-glow2"></div>
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="pulse"></span> &#x2728; Nouvelles Offres &mdash; Collection 2026</div>
+      <h1>Votre boutique<br><span>pr&eacute;f&eacute;r&eacute;e</span> au Maroc</h1>
+      <p class="hero-sub">Des produits de qualit&eacute; pour toute la famille. &Eacute;lectronique, mode, sport, beaut&eacute; et bien plus. Livraison en 24&ndash;48h partout au Maroc.</p>
+      <div class="hero-btns">
+        <a href="#products" class="hero-btn-primary"><i class="fas fa-shopping-bag"></i> D&eacute;couvrir</a>
+        <a href="https://wa.me/212774011555" class="hero-btn-secondary" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <button class="hero-btn-qr" onclick="openQRModal()"><i class="fas fa-qrcode"></i> QR Codes</button>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><span class="hstat-n">500+</span><span class="hstat-l">Clients</span></div>
+        <div class="hstat"><span class="hstat-n">48h</span><span class="hstat-l">Livraison</span></div>
+        <div class="hstat"><span class="hstat-n">100%</span><span class="hstat-l">S&eacute;curis&eacute;</span></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-ramadan-wrap">
+        <img class="hero-ramadan-img" src="https://res.cloudinary.com/djagllief/image/upload/v1773994242/aid_said_alq5ll.jpg" alt="Ramadan Kareem">
+        <div class="hero-ramadan-overlay"></div>
+        <div class="hero-ramadan-badge"><i class="fas fa-tag"></i> Offres Sp&eacute;ciales</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="trust"><div class="container trust-grid">
+  <div class="trust-item"><div class="trust-icon"><i class="fas fa-truck-fast"></i></div><div class="trust-text"><h4>Livraison rapide</h4><p>24&ndash;48h partout au Maroc</p></div></div>
+  <div class="trust-item"><div class="trust-icon"><i class="fas fa-shield-halved"></i></div><div class="trust-text"><h4>Paiement s&eacute;curis&eacute;</h4><p>Cash, carte, virement</p></div></div>
+  <div class="trust-item"><div class="trust-icon"><i class="fas fa-rotate-left"></i></div><div class="trust-text"><h4>Retours faciles</h4><p>Sous 3 jours</p></div></div>
+  <div class="trust-item"><div class="trust-icon"><i class="fas fa-headset"></i></div><div class="trust-text"><h4>Support 7j/7</h4><p>WhatsApp &amp; Email</p></div></div>
+</div></div>
+<section class="cats-section" id="categories"><div class="container">
+  <div class="sec-head"><div class="sec-left"><h2>Nos Cat&eacute;gories</h2><p>Trouvez le produit parfait dans nos collections</p></div></div>
+  <div class="cats-grid" id="catsGrid"></div>
+</div></section>
+<!-- ▶ PUB ENTRE CATÉGORIES ET PRODUITS -->
+<div id="adBelowCats" class="ad-between-section"></div>
+
+<section class="products-section" id="products"><div class="container">
+  <div class="sec-head"><div class="sec-left"><h2 id="prodsTitle">Tous nos produits</h2><p id="prodsSubtitle">S&eacute;lection de produits de qualit&eacute;</p></div></div>
+  <div class="filter-bar">
+    <div class="filter-left"><span class="filter-label">Trier par :</span>
+      <select class="filter-select" id="sortSelect" onchange="sortProducts()">
+        <option value="default">Par d&eacute;faut</option>
+        <option value="price-asc">Prix croissant</option>
+        <option value="price-desc">Prix d&eacute;croissant</option>
+        <option value="rating">Mieux not&eacute;s</option>
+        <option value="discount">Meilleures remises</option>
+      </select>
+    </div>
+    <div class="filter-right" id="prodsCount">Chargement...</div>
+  </div>
+  <div class="prods-grid" id="prodsGrid"></div>
+</div></section>
+<section class="promo-section"><div class="container">
+  <div class="promo-banner">
+    <div>
+      <div class="promo-tag"><i class="fas fa-tag"></i> Offre exclusive</div>
+      <h2>Livraison Gratuite<br>d&egrave;s 300 DH !</h2>
+      <p>Commandez maintenant et profitez de la livraison offerte dans tout le Maroc.</p>
+      <a href="#products" class="promo-btn"><i class="fas fa-shopping-cart"></i> Commander maintenant</a>
+    </div>
+    <div class="promo-timer">
+      <p>Offre se termine dans</p>
+      <div class="timer-boxes">
+        <div class="timer-box"><span class="timer-num" id="t-h">00</span><span class="timer-lab">Heures</span></div>
+        <div class="timer-box"><span class="timer-num" id="t-m">00</span><span class="timer-lab">Min</span></div>
+        <div class="timer-box"><span class="timer-num" id="t-s">00</span><span class="timer-lab">Sec</span></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+<div class="modal-ov" id="quickModal" onclick="handleModalClick(event)">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal();event.stopPropagation()"><i class="fas fa-xmark"></i></button>
+    <div class="modal-inner" id="modalInner"></div>
+  </div>
+</div>
+<div class="cart-ov" id="cartOv">
+  <div class="cart-bg" onclick="closeCart()"></div>
+  <div class="cart-panel">
+    <div class="cart-head"><h3><i class="fas fa-cart-shopping" style="color:var(--pr);margin-right:8px"></i> Mon Panier</h3><button class="cart-close-btn" onclick="closeCart()"><i class="fas fa-xmark"></i></button></div>
+    <div class="cart-body-scroll">
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="client-form">
+        <h4><i class="fas fa-user"></i> Vos Informations</h4>
+        <div class="form-group"><label>Nom complet *</label><input type="text" id="clientName" placeholder="Votre nom complet"><span class="form-error">Ce champ est requis</span></div>
+        <div class="form-group"><label>T&eacute;l&eacute;phone *</label><input type="tel" id="clientPhone" placeholder="+212 6XX XXX XXX"><span class="form-error">Num&eacute;ro invalide</span></div>
+        <div class="form-group"><label>Ville *</label><input type="text" id="clientCity" placeholder="Votre ville"><span class="form-error">Ce champ est requis</span></div>
+        <div class="form-group"><label>Adresse compl&egrave;te *</label><textarea id="clientAddress" placeholder="Votre adresse de livraison"></textarea><span class="form-error">Ce champ est requis</span></div>
+      </div>
+      <div class="cart-subtotal"><strong>Sous-total :</strong><span class="amt" id="cartTotal">0 DH</span></div>
+      <div class="cart-shipping"><span>Livraison :</span><span id="cartShipping">Calcul&eacute;e &agrave; la commande</span></div>
+      <div class="pay-methods-title"><i class="fas fa-credit-card"></i> Choisir mode de paiement</div>
+      <div class="pay-methods-grid">
+        <button class="pay-method-btn pay-whatsapp" onclick="checkout('whatsapp')">
+          <i class="fab fa-whatsapp"></i>
+          <span>WhatsApp</span>
+          <small>Commande rapide</small>
+        </button>
+        <button class="pay-method-btn pay-cmi" onclick="checkout('cmi')">
+          <div class="cmi-icons">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+          </div>
+          <span>Carte bancaire</span>
+          <small>CMI sécurisé</small>
+        </button>
+        <button class="pay-method-btn pay-cash" onclick="checkout('cash')">
+          <i class="fas fa-money-bill-wave"></i>
+          <span>Cash à la livraison</span>
+          <small>Payer à reception</small>
+        </button>
+        <button class="pay-method-btn pay-virement" onclick="checkout('virement')">
+          <i class="fas fa-building-columns"></i>
+          <span>Virement bancaire</span>
+          <small>CIH / Attijariwafa</small>
+        </button>
+        <button class="pay-method-btn pay-paypal-grid" onclick="checkout('paypal')">
+          <i class="fab fa-paypal"></i>
+          <span>Payer avec PayPal</span>
+          <small>Sécurisé · Carte ou compte PayPal</small>
+        </button>
+      </div>
+      <button class="cart-continue" onclick="closeCart()">&larr; Continuer les achats</button>
+    </div>
+    </div><!-- end cart-body-scroll -->
+  </div>
+</div>
+<div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastMsg"></span></div>
+<footer class="site-footer">
+  <div class="f-nl"><div class="container f-nl-inner">
+    <div class="f-nl-text"><h3>&#128231; Restez Inform&eacute; !</h3><p>Recevez nos offres exclusives et nouveaut&eacute;s</p></div>
+    <div class="f-nl-form"><input type="email" placeholder="Votre adresse email..."><button onclick="showToast('&#9989; Merci pour votre inscription !')">S'abonner</button></div>
+  </div></div>
+  <div class="container f-grid">
+    <div class="fc"><h4>KLIKOO Store</h4><p class="fc-about">Votre destination shopping de confiance pour des produits de qualit&eacute; &agrave; prix comp&eacute;titifs. La meilleure exp&eacute;rience d'achat en ligne au Maroc.</p><div class="f-badge"><i class="fas fa-shipping-fast"></i> Livraison dans tout le Maroc</div></div>
+    <div class="fc"><h4>Navigation</h4><ul class="f-links"><li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li><li><a href="about.html"><i class="fas fa-info-circle"></i> &Agrave; Propos</a></li><li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li><li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li><li><a href="advertise.html" style="color:var(--pr);font-weight:700"><i class="fas fa-bullhorn"></i> Faire de la pub</a></li></ul></div>
+    <div class="fc"><h4>Service Client</h4><ul class="f-links"><li><a href="wishlist.html"><i class="fas fa-heart"></i> Ma Liste</a></li><li><a href="#"><i class="fas fa-truck"></i> Suivi commande</a></li><li><a href="#"><i class="fas fa-undo"></i> Retours</a></li><li><a href="#"><i class="fas fa-question-circle"></i> FAQ</a></li></ul></div>
+    <div class="fc"><h4>Contactez-nous</h4>
+      <div class="f-contact">
+        <div class="f-ci"><div class="f-ci-ic"><i class="fas fa-phone"></i></div><div class="f-ci-tx"><small>T&eacute;l&eacute;phone</small><a href="tel:+212774011555">+212 774 011 555</a></div></div>
+        <div class="f-ci"><div class="f-ci-ic"><i class="fas fa-envelope"></i></div><div class="f-ci-tx"><small>Email</small><a href="mailto:contact@klikoo.ma">contact@klikoo.ma</a></div></div>
+        <div class="f-ci"><div class="f-ci-ic"><i class="fas fa-map-marker-alt"></i></div><div class="f-ci-tx"><small>Adresse</small><a>Casablanca, Maroc</a></div></div>
+        <div class="f-ci"><div class="f-ci-ic"><i class="fas fa-clock"></i></div><div class="f-ci-tx"><small>Horaires</small><a>Lun&ndash;Sam : 9h&ndash;18h</a></div></div>
+      </div>
+      <div class="f-soc"><h5>Suivez-nous</h5><div class="f-soc-icons"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="https://wa.me/212774011555" target="_blank"><i class="fab fa-whatsapp"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div>
+    </div>
+  </div>
+  <div class="f-bot"><div class="container f-bot-inner">
+    <div>
+      <div class="f-copy" id="klikoo-admin-trigger" style="cursor:default;user-select:none;">&copy; 2026 KLIKOO Store. Tous droits r&eacute;serv&eacute;s.</div>
+      <div class="f-legal"><a href="#">Confidentialit&eacute;</a><a href="#">Mentions l&eacute;gales</a><a href="#">Cookies</a><a href="advertise.html" style="color:var(--pr);font-weight:700"><i class="fas fa-bullhorn"></i> Annonceurs</a></div>
+    </div>
+    <div class="f-pay"><i class="fas fa-credit-card"></i><i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i><i class="fas fa-money-bill-wave"></i></div>
+  </div></div>
+</footer>
+
+
+<a href="video-pub.html" class="pub-video-btn pub-video-btn--left" title="Offre Vidéo Pub">
+  <span class="pub-video-icon">🎬</span>
+  <span class="pub-video-label">Pub Vidéo </span>
+</a>
+
+<a href="video-ads.html" class="pub-video-btn pub-video-btn--right" title="Pub Vidéo">
+  <span class="pub-video-icon">🎥</span>
+  <span class="pub-video-label">Offre Vidéo</span>
+</a>
+
+<!-- Barre mobile vidéo (remplace les boutons fixed sur petit écran) -->
+<div class="pub-video-bar">
+  <a href="video-pub.html">🎬 Pub Vidéo</a>
+  <a href="video-ads.html">🎥 Offre Vidéo</a>
+</div>
+
+  <script src="products.js"></script>
+  <script src="main.js"></script>
+  <script src="ads.js"></script>
+  <script>
+  // ── BOUTON TEST PUB (à retirer en production) ─────────────
+  function injecterPubTest() {
+    const today = new Date().toISOString().split('T')[0];
+    const next  = new Date(Date.now()+30*86400000).toISOString().split('T')[0];
+    const testAd = {
+      id: 'AD_TEST_' + Date.now(),
+      status: 'active',
+      advertiser: 'Test Marque',
+      title: 'Offre Spéciale -50%',
+      text: 'Profitez de nos offres exclusives !',
+      description: 'Produits de qualité à prix réduits.',
+      emoji: '🔥',
+      cta: "Voir l'offre",
+      url: '#',
+      image: '',
+      video: '',
+      slots: ['sidebar','popup','in-feed','top-banner'],
+      slot: 'sidebar',
+      startDate: today,
+      endDate: next,
+      clicks: 0,
+      impressions: 0,
+      submittedAt: new Date().toISOString(),
+      contact: { name: 'Admin', phone: '', email: '' }
+    };
+    const list = JSON.parse(localStorage.getItem('klikoo_ads') || '[]');
+    // Remove old test ads
+    const clean = list.filter(a => !a.id.startsWith('AD_TEST_'));
+    clean.push(testAd);
+    localStorage.setItem('klikoo_ads', JSON.stringify(clean));
+    location.reload();
+  }
+
+  function viderPubs() {
+    localStorage.removeItem('klikoo_ads');
+    localStorage.removeItem('klikoo_ads_pending');
+    sessionStorage.removeItem('klikoo_popup_shown');
+    location.reload();
+  }
+
+  // Debug console only
+  document.addEventListener('DOMContentLoaded', function() {
+    const ads = JSON.parse(localStorage.getItem('klikoo_ads') || '[]');
+    console.log('%c[KLIKOO ADS DEBUG]', 'color:#ff8716;font-weight:bold;font-size:14px');
+    console.log('klikoo_ads:', ads.length, 'pub(s)');
+    ads.forEach(a => console.log(' →', a.id, '| status:', a.status, '| slots:', a.slots, '| start:', a.startDate, '| end:', a.endDate));
+  });
+  </script>
+
+
+<!-- ══ RADIO PLAYER BAR ══ -->
+<link rel="stylesheet" href="radio.css">
+<button id="radioToggle" onclick="toggleRadioBar()" title="Radio KLIKOO">
+  <i class="fas fa-music" id="radioToggleIcon"></i>
+</button>
+<div id="radioBar">
+  <div class="rb-label">
+    <div class="rb-dot" id="rbDot"></div>
+    Radio
+  </div>
+  <div class="rb-disc" id="rbDisc">🎵</div>
+  <div class="rb-info">
+    <div class="rb-title" id="rbTitle">Aucune piste</div>
+    <div class="rb-artist" id="rbArtist">Ajoutez des chansons via le Dashboard</div>
+  </div>
+  <div class="rb-progress-wrap">
+    <div class="rb-progress-bar" id="rbProgressBar" onclick="rbSeek(event)">
+      <div class="rb-progress-fill" id="rbProgressFill"></div>
+    </div>
+    <div class="rb-times">
+      <span id="rbCurrent">0:00</span>
+      <span id="rbDuration">0:00</span>
+    </div>
+  </div>
+  <div class="rb-controls">
+    <button class="rb-btn" onclick="rbPrev()"><i class="fas fa-step-backward"></i></button>
+    <button class="rb-btn-play" id="rbPlayBtn" onclick="rbTogglePlay()">
+      <i class="fas fa-play" id="rbPlayIcon"></i>
+    </button>
+    <button class="rb-btn" onclick="rbNext()"><i class="fas fa-step-forward"></i></button>
+    <button class="rb-btn" id="rbShuffleBtn" onclick="rbToggleShuffle()"><i class="fas fa-random"></i></button>
+  </div>
+  <div class="rb-vol">
+    <i class="fas fa-volume-down"></i>
+    <input type="range" class="rb-vol-slider" id="rbVolSlider" min="0" max="100" value="80" oninput="rbSetVol(this.value)">
+    <i class="fas fa-volume-up"></i>
+  </div>
+  <button id="rbPlaylistBtn" onclick="rbTogglePlaylist()" title="Playlist">
+    <i class="fas fa-list"></i>
+  </button>
+</div>
+
+<!-- Playlist Panel -->
+<div id="rbPlaylistPanel">
+  <div class="rb-pl-header">
+    <div class="rb-pl-title">
+      <i class="fas fa-music"></i> Playlist
+      <span class="rb-pl-count" id="rbPlCount">0 pistes</span>
+    </div>
+    <button class="rb-pl-close" onclick="rbTogglePlaylist()" title="Fermer"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="rb-pl-search-wrap">
+    <input class="rb-pl-search" id="rbPlSearch" type="text" placeholder="Rechercher une piste..." oninput="rbRenderPlaylist(this.value)">
+  </div>
+  <div class="rb-pl-list" id="rbPlList"></div>
+</div>
+<script src="radio.js"></script>
+
+<!-- ── APP BOTTOM NAVIGATION ── -->
+<nav class="app-bottom-nav" id="appBottomNav">
+  <a href="index.html" class="app-nav-item active">
+    <i class="fas fa-home"></i>
+    <span class="app-nav-label">Accueil</span>
+  </a>
+  <a href="#categories" class="app-nav-item" onclick="event.preventDefault();var el=document.getElementById('categories');if(el){el.scrollIntoView({behavior:'smooth'});}document.querySelectorAll('.app-nav-item').forEach(x=>x.classList.remove('active'));this.classList.add('active');">
+    <i class="fas fa-th-large"></i>
+    <span class="app-nav-label">Catégories</span>
+  </a>
+  <button class="app-nav-item" onclick="document.querySelectorAll('.app-nav-item').forEach(x=>x.classList.remove('active'));this.classList.add('active');openCart()">
+    <i class="fas fa-shopping-bag"></i>
+    <span class="app-nav-badge" id="appCartBadge">0</span>
+    <span class="app-nav-label">Panier</span>
+  </button>
+  <a href="wishlist.html" class="app-nav-item">
+    <i class="fa-regular fa-heart"></i>
+    <span class="app-nav-badge" id="appWishBadge">0</span>
+    <span class="app-nav-label">Favoris</span>
+  </a>
+  <a href="signup.html" class="app-nav-item">
+    <i class="fas fa-user-circle"></i>
+    <span class="app-nav-label">Compte</span>
+  </a>
+</nav>
+
+<!-- Install Banner -->
+<div id="installBanner" style="display:none;position:fixed;bottom:70px;left:12px;right:12px;background:linear-gradient(135deg,#ff8716,#e06500);color:#fff;border-radius:16px;padding:14px 16px;z-index:9998;align-items:center;gap:12px;box-shadow:0 8px 32px rgba(255,135,22,.5)">
+  <img src="icon-72x72.png" style="width:42px;height:42px;border-radius:10px;flex-shrink:0">
+  <div style="flex:1">
+    <div style="font-weight:800;font-size:14px">Installer KLIKOO</div>
+    <div style="font-size:11px;opacity:.85">Ajoutez l'app sur votre écran d'accueil</div>
+  </div>
+  <button id="installBtn" style="background:#fff;color:#ff8716;border:none;border-radius:10px;padding:8px 14px;font-weight:800;font-size:13px;cursor:pointer;flex-shrink:0">Installer</button>
+  <button onclick="document.getElementById('installBanner').style.display='none'" style="background:rgba(255,255,255,.2);color:#fff;border:none;border-radius:8px;width:28px;height:28px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0">✕</button>
+</div>
+<script>
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  const banner = document.getElementById('installBanner');
+  if (banner) banner.style.display = 'flex';
+  const btn = document.getElementById('installBtn');
+  if (btn) btn.onclick = () => {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(() => {
+      banner.style.display = 'none';
+      deferredPrompt = null;
+    });
+  };
+});
+</script>
+
+<script>
+// Sync bottom nav badges with header badges
+(function syncNavBadges(){
+  function update(){
+    var cart = document.getElementById('cartBadge');
+    var wish = document.getElementById('wishBadge');
+    var ac = document.getElementById('appCartBadge');
+    var aw = document.getElementById('appWishBadge');
+    if(cart && ac){
+      var v = cart.textContent.trim();
+      ac.textContent = v;
+      ac.style.display = (v==='0'||v==='') ? 'none' : 'flex';
+    }
+    if(wish && aw){
+      var w = wish.textContent.trim();
+      aw.textContent = w;
+      aw.style.display = (w==='0'||w==='') ? 'none' : 'flex';
+    }
+  }
+  update();
+  setInterval(update, 800);
+  var obs = new MutationObserver(update);
+  ['cartBadge','wishBadge'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) obs.observe(el,{childList:true,characterData:true,subtree:true});
+  });
+})();
+</script>
+
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(r => console.log('[SW] Registered:', r.scope))
+          .catch(e => console.log('[SW] Error:', e));
+      });
+    }
+    // Install prompt
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', e => {
+      e.preventDefault();
+      deferredPrompt = e;
+      const btn = document.getElementById('installBtn');
+      if (btn) { btn.style.display = 'flex'; btn.onclick = () => { deferredPrompt.prompt(); deferredPrompt = null; btn.style.display='none'; }; }
+    });
+    window.addEventListener('appinstalled', () => {
+      const btn = document.getElementById('installBtn');
+      if (btn) btn.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

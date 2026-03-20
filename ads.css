@@ -1,0 +1,267 @@
+/* ============================================================
+ *  KLIKOO — ads.css  v9.0  FINAL
+ * ============================================================ */
+
+/* ── 1. BANNIÈRE TOP ─────────────────────────────────────── */
+#adTopBanner {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg,#ff8716,#e06500);
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+  min-height: 40px;
+  padding: 8px 48px 8px 16px;
+  position: relative;
+  z-index: 1000;
+}
+.ad-top-inner {
+  display:flex;align-items:center;gap:10px;
+  text-decoration:none;color:#fff;flex:1;justify-content:center;flex-wrap:wrap;
+}
+.ad-top-emoji { font-size:16px }
+.ad-top-text  { opacity:.95 }
+.ad-top-cta {
+  background:rgba(255,255,255,.25);border:1px solid rgba(255,255,255,.4);
+  padding:3px 12px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap;
+}
+.ad-top-close {
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  background:rgba(255,255,255,.2);border:none;color:#fff;
+  width:26px;height:26px;border-radius:50%;font-size:16px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* ══════════════════════════════════════════════════════════
+   2. POPUP — Bouton × toujours visible, image centrée
+   ══════════════════════════════════════════════════════════ */
+#adPopup {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.7);
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+#adPopup.open { display: flex; }
+
+/* La box popup */
+.adp-box {
+  position: relative;
+  background: #fff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,.4);
+  animation: adpPopUp .4s cubic-bezier(.175,.885,.32,1.275);
+  display: flex;
+  flex-direction: column;
+}
+@keyframes adpPopUp {
+  from { opacity:0; transform:scale(.82) translateY(28px) }
+  to   { opacity:1; transform:scale(1)   translateY(0)    }
+}
+
+/* Bouton fermer — toujours visible en haut à droite */
+.adp-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  margin: 10px 10px -42px auto;
+  width: 32px;
+  height: 32px;
+  background: rgba(0,0,0,.15);
+  border: none;
+  border-radius: 50%;
+  font-size: 13px;
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  transition: background .2s;
+  flex-shrink: 0;
+}
+.adp-close:hover { background: rgba(0,0,0,.28); }
+
+/* Badge "Offre Sponsorisée" */
+.adp-badge {
+  position: absolute;
+  top: 10px; left: 10px;
+  background: rgba(0,0,0,.45);
+  color: rgba(255,255,255,.92);
+  font-size: 9px; font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 20px;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  z-index: 50;
+  pointer-events: none;
+}
+
+/* Zone image — hauteur fixe, image bien centrée */
+.adp-img-wrap {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #f0f0f0;
+  flex-shrink: 0;
+}
+.adp-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.adp-img-placeholder {
+  background: linear-gradient(135deg,#ff8716,#e06500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56px;
+}
+
+/* Corps texte */
+.adp-body {
+  padding: 18px 22px 22px;
+  flex: 1;
+}
+.adp-brand {
+  font-size: 11px; font-weight: 800;
+  color: #ff8716;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.adp-title {
+  font-size: 20px; font-weight: 800;
+  color: #111; line-height: 1.3;
+  margin: 0 0 8px;
+}
+.adp-desc {
+  font-size: 13px; color: #666;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.adp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg,#ff8716,#e06500);
+  color: #fff;
+  padding: 13px 22px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(255,135,22,.38);
+  transition: transform .2s, box-shadow .2s;
+}
+.adp-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(255,135,22,.5); }
+
+/* ══════════════════════════════════════════════════════════
+   3. SIDEBARS — Remplissent exactement les espaces latéraux
+   ══════════════════════════════════════════════════════════ */
+#adSideLeft,
+#adSideRight {
+  display: none;
+  position: fixed;
+  top: 120px;
+  bottom: 80px;
+  width: calc((100vw - 1160px) / 2 - 10px);
+  min-width: 100px;
+  max-width: 200px;
+  z-index: 400;
+  overflow: hidden;
+  transition: opacity .3s;
+}
+#adSideLeft  { left: 4px; }
+#adSideRight { right: 4px; }
+
+/* Animation d'entrée */
+#adSideLeft.visible, #adSideRight.visible { opacity: 1; }
+
+@media (max-width: 1200px) {
+  #adSideLeft, #adSideRight { display: none !important; }
+}
+
+/* ── 4. IN-FEED ────────────────────────────────────────────── */
+.ad-infeed-card {
+  background: linear-gradient(135deg,#fff9f3,#fff3e8);
+  border: 2px dashed #ffb870;
+  border-radius: 16px; overflow: hidden;
+  position: relative;
+  transition: transform .2s, box-shadow .2s;
+}
+.ad-infeed-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(255,135,22,.2); }
+.ad-infeed-label {
+  position: absolute; top: 10px; left: 10px;
+  background: rgba(255,135,22,.15); color: #e06500;
+  font-size: 10px; font-weight: 700;
+  padding: 3px 9px; border-radius: 20px;
+  letter-spacing: .5px; text-transform: uppercase;
+  border: 1px solid rgba(255,135,22,.3);
+}
+.ad-infeed-img { height: 150px; overflow: hidden; background: #ffe8cc; }
+.ad-infeed-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ad-infeed-noimg {
+  height: 120px; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg,#ff8716,#e06500); font-size: 36px;
+}
+.ad-infeed-body  { padding: 14px; }
+.ad-infeed-brand { font-size: 10px; font-weight: 700; color: #ff8716; text-transform: uppercase; letter-spacing: .8px; margin-bottom: 5px; }
+.ad-infeed-title { font-size: 14px; font-weight: 700; color: #111; line-height: 1.4; margin-bottom: 12px; }
+.ad-infeed-btn {
+  display: inline-flex; align-items: center;
+  background: linear-gradient(135deg,#ff8716,#e06500); color: #fff;
+  padding: 8px 16px; border-radius: 10px;
+  font-size: 12px; font-weight: 700; text-decoration: none;
+}
+
+/* ── 5. BANNIÈRE ENTRE SECTIONS ──────────────────────────── */
+.ad-between-section { display: none; padding: 0 5%; margin: -10px 0 20px; }
+.ad-between-inner {
+  max-width: 1260px; margin: 0 auto;
+  background: linear-gradient(135deg,#fff9f2,#fff3e5);
+  border: 2px solid #ffd09e; border-radius: 18px; overflow: hidden;
+  position: relative; transition: box-shadow .25s, transform .25s;
+}
+.ad-between-inner:hover { box-shadow: 0 8px 32px rgba(255,135,22,.18); transform: translateY(-2px); }
+.ad-between-label {
+  position: absolute; top: 10px; left: 14px;
+  background: rgba(255,135,22,.15); color: #c95e00;
+  font-size: 10px; font-weight: 700; padding: 2px 9px;
+  border-radius: 20px; letter-spacing: .6px; text-transform: uppercase;
+  border: 1px solid rgba(255,135,22,.3); z-index: 2;
+}
+.ad-between-link {
+  display: flex; align-items: center; text-decoration: none;
+  min-height: 96px; padding: 18px 20px; gap: 18px;
+}
+.ad-between-img   { width: 140px; height: 80px; object-fit: cover; border-radius: 12px; flex-shrink: 0; display: block; }
+.ad-between-content { display: flex; align-items: center; gap: 16px; flex: 1; flex-wrap: wrap; }
+.ad-between-emoji { font-size: 32px; flex-shrink: 0; }
+.ad-between-brand { font-size: 11px; font-weight: 700; color: #ff8716; text-transform: uppercase; letter-spacing: .8px; margin-bottom: 4px; }
+.ad-between-title { font-size: 17px; font-weight: 800; color: #111; line-height: 1.3; }
+.ad-between-desc  { font-size: 13px; color: #777; margin-top: 4px; }
+.ad-between-cta {
+  margin-left: auto; flex-shrink: 0;
+  background: linear-gradient(135deg,#ff8716,#e06500); color: #fff;
+  padding: 10px 22px; border-radius: 12px;
+  font-size: 13px; font-weight: 700; white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(255,135,22,.3);
+}
+@media (max-width: 600px) {
+  .ad-between-section { padding: 0 3%; }
+  .ad-between-img { display: none; }
+  .ad-between-cta { width: 100%; text-align: center; margin-left: 0; }
+}

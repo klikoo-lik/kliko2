@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff8716">
+  <meta name="mobile-web-app-capable" content="yes">
+  <!-- iOS App-like -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="KLIKOO">
+  <link rel="apple-touch-icon" href="icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="icon-192x192.png">
+  <!-- Splash screens iOS -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- MS Tiles -->
+  <meta name="msapplication-TileColor" content="#ff8716">
+  <meta name="msapplication-TileImage" content="icon-144x144.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — KLIKOO Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+
+<!-- ANNOUNCE BAR -->
+<div class="ann-bar">
+  <div class="ann-scroll">
+    <span class="ann-item"><i class="fas fa-star-and-crescent"></i> Ramadan Kareem &mdash; Offres Sp&eacute;ciales !</span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-truck"></i> Livraison gratuite d&egrave;s <b>300 DH</b></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-phone"></i> <a href="tel:+212774011555">+212 774 011 555</a></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-shield-alt"></i> Paiement <b>100% S&eacute;curis&eacute;</b></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-undo"></i> Retour sous <b>3 jours</b></span><span class="ann-sep">✦</span>
+
+    <span class="ann-item"><i class="fas fa-star-and-crescent"></i> Ramadan Kareem &mdash; Offres Sp&eacute;ciales !</span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-truck"></i> Livraison gratuite d&egrave;s <b>300 DH</b></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-phone"></i> <a href="tel:+212774011555">+212 774 011 555</a></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-shield-alt"></i> Paiement <b>100% S&eacute;curis&eacute;</b></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-undo"></i> Retour sous <b>3 jours</b></span><span class="ann-sep">✦</span>
+
+    <span class="ann-item"><i class="fas fa-star-and-crescent"></i> Ramadan Kareem &mdash; Offres Sp&eacute;ciales !</span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-truck"></i> Livraison gratuite d&egrave;s <b>300 DH</b></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-phone"></i> <a href="tel:+212774011555">+212 774 011 555</a></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-shield-alt"></i> Paiement <b>100% S&eacute;curis&eacute;</b></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-undo"></i> Retour sous <b>3 jours</b></span><span class="ann-sep">✦</span>
+
+    <span class="ann-item"><i class="fas fa-star-and-crescent"></i> Ramadan Kareem &mdash; Offres Sp&eacute;ciales !</span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-truck"></i> Livraison gratuite d&egrave;s <b>300 DH</b></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-phone"></i> <a href="tel:+212774011555">+212 774 011 555</a></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-shield-alt"></i> Paiement <b>100% S&eacute;curis&eacute;</b></span><span class="ann-sep">✦</span>
+    <span class="ann-item"><i class="fas fa-undo"></i> Retour sous <b>3 jours</b></span><span class="ann-sep">✦</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="h-top">
+    <div class="container h-top-grid">
+      <a href="index.html" class="h-logo">
+        <div class="h-logo-text">
+          <span class="h-logo-name">KLIKOO<span style="color:var(--pr)">.</span></span>
+          <span class="h-logo-tagline">Shopping Store</span>
+        </div>
+      </a>
+      <div class="h-srch-wrap">
+        <div class="h-srch">
+          <input type="search" placeholder="Rechercher un produit...">
+          <button class="h-srch-btn"><i class="fas fa-search"></i> Rechercher</button>
+        </div>
+      </div>
+      <div class="h-actions">
+        <a href="wishlist.html" class="h-icon-btn">
+          <i class="fa-regular fa-heart"></i>
+          <span class="h-badge" id="wishBadge">0</span>
+        </a>
+        <button class="h-icon-btn">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="h-badge" id="cartBadge">0</span>
+        </button>
+        <div class="h-auth">
+          <a href="login.html" class="btn-login"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+          <a href="signup.html" class="btn-signup"><i class="fas fa-user-plus"></i> Inscription</a>
+        </div>
+        <button class="hbg" onclick="toggleMob()"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+  <nav class="h-nav">
+    <div class="container nav-inner">
+      <ul class="nav-ul">
+        <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> À Propos</a></li>
+        <li class="act"><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="mob-menu" id="mobMenu">
+    <ul class="mob-ul">
+      <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+      <li><a href="about.html"><i class="fas fa-info-circle"></i> À Propos</a></li>
+      <li class="act"><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+    <div class="mob-auth-row">
+      <a href="login.html" class="btn-login"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+      <a href="signup.html" class="btn-signup"><i class="fas fa-user-plus"></i> Inscription</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="container hero-inner">
+    <div class="hero-badge"><span class="pulse"></span> Blog & Actualités</div>
+    <h1>Conseils &amp; <span>Tendances</span></h1>
+    <p class="hero-sub">Guides d'achat, astuces tech et tendances shopping au Maroc. Des conseils experts pour mieux choisir vos produits.</p>
+    <div class="hero-search">
+      <input type="text" id="heroSrch" placeholder="Rechercher un article, une catégorie…" oninput="doSearch()">
+      <button><i class="fas fa-search"></i> Rechercher</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-n">6</span><span class="hstat-l">Articles</span></div>
+      <div class="hstat"><span class="hstat-n">6</span><span class="hstat-l">Catégories</span></div>
+      <div class="hstat"><span class="hstat-n">5K+</span><span class="hstat-l">Lectures</span></div>
+      <div class="hstat"><span class="hstat-n">2026</span><span class="hstat-l">Année</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY BAR -->
+<div class="cat-bar">
+  <div class="container">
+    <div class="cat-bar-inner" id="catBar"></div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<section class="blog-section">
+  <div class="container">
+    <div class="blog-wrap">
+      <main>
+        <div class="sec-head">
+          <h2 class="sec-title" id="secTitle">Tous les articles</h2>
+          <span class="sec-count" id="secCount">6 articles</span>
+        </div>
+        <div class="art-grid" id="artGrid"></div>
+        <div class="pages" id="pages"></div>
+      </main>
+      <aside class="sidebar">
+        <div class="wg">
+          <h3 class="wg-title"><i class="fas fa-tags"></i> Catégories</h3>
+          <div class="sb-cats" id="sbCats"></div>
+        </div>
+        <div class="wg">
+          <h3 class="wg-title"><i class="fas fa-fire-flame-curved"></i> Populaires</h3>
+          <div id="sbPop"></div>
+        </div>
+        <div class="wg">
+          <h3 class="wg-title"><i class="fas fa-hashtag"></i> Tags</h3>
+          <div class="tags-cloud" id="sbTags"></div>
+        </div>
+        <div class="wg">
+          <h3 class="wg-title"><i class="fas fa-envelope"></i> Newsletter</h3>
+          <p style="font-size:13.5px;color:var(--gr);margin-bottom:14px;line-height:1.6">Recevez nos meilleurs articles chaque semaine.</p>
+          <form class="nl-form" onsubmit="nlSub(event)">
+            <input type="email" placeholder="votre@email.com" required>
+            <button type="submit"><i class="fas fa-paper-plane"></i> S'abonner</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE MODAL -->
+<div class="a-modal" id="artModal">
+  <div class="m-ov" onclick="closeMod()"></div>
+  <div class="m-panel">
+    <button class="m-close" onclick="closeMod()"><i class="fas fa-xmark"></i></button>
+    <img class="m-cover" id="mCover" src="" alt="">
+    <div class="m-body" id="mBody"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="f-nl">
+    <div class="container f-nl-inner">
+      <div class="f-nl-text">
+        <h3>📧 Restez Informé !</h3>
+        <p>Recevez nos offres exclusives et nouveautés</p>
+      </div>
+      <div class="f-nl-form">
+        <input type="email" placeholder="Votre adresse email...">
+        <button onclick="alert('✅ Merci pour votre inscription !')">S'abonner</button>
+      </div>
+    </div>
+  </div>
+  <div class="container f-grid">
+    <div class="fc">
+      <h4>KLIKOO Store</h4>
+      <p class="fc-about">Votre destination shopping de confiance pour des produits de qualité à prix compétitifs. La meilleure expérience d'achat en ligne au Maroc.</p>
+      <div class="f-badge"><i class="fas fa-shipping-fast"></i> Livraison dans tout le Maroc</div>
+    </div>
+    <div class="fc">
+      <h4>Navigation</h4>
+      <ul class="f-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> À Propos</a></li>
+        <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Service Client</h4>
+      <ul class="f-links">
+        <li><a href="wishlist.html"><i class="fas fa-heart"></i> Ma Liste</a></li>
+        <li><a href="#"><i class="fas fa-truck"></i> Suivi commande</a></li>
+        <li><a href="#"><i class="fas fa-undo"></i> Retours</a></li>
+        <li><a href="#"><i class="fas fa-question-circle"></i> FAQ</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Contactez-nous</h4>
+      <div class="f-contact">
+        <div class="f-ci"><div class="f-ci-ic"><i class="fas fa-phone"></i></div><div class="f-ci-tx"><small>Téléphone</small><a href="tel:+212774011555">+212 774 011 555</a></div></div>
+        <div class="f-ci"><div class="f-ci-ic"><i class="fas fa-envelope"></i></div><div class="f-ci-tx"><small>Email</small><a href="mailto:contact@klikoo.ma">contact@klikoo.ma</a></div></div>
+        <div class="f-ci"><div class="f-ci-ic"><i class="fas fa-map-marker-alt"></i></div><div class="f-ci-tx"><small>Adresse</small><a>Casablanca, Maroc</a></div></div>
+        <div class="f-ci"><div class="f-ci-ic"><i class="fas fa-clock"></i></div><div class="f-ci-tx"><small>Horaires</small><a>Lun–Sam : 9h–18h</a></div></div>
+      </div>
+      <div class="f-soc">
+        <h5>Suivez-nous</h5>
+        <div class="f-soc-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/212774011555"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="f-bot">
+    <div class="container f-bot-inner">
+      <div>
+        <div class="f-copy">© 2026 KLIKOO Store. Tous droits réservés.</div>
+        <div class="f-legal"><a href="#">Confidentialité</a><a href="#">Mentions légales</a><a href="#">Cookies</a></div>
+      </div>
+      <div class="f-pay">
+        <i class="fas fa-credit-card"></i>
+        <i class="fab fa-cc-visa"></i>
+        <i class="fab fa-cc-mastercard"></i>
+        <i class="fas fa-money-bill-wave"></i>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="blog.js"></script>
+
+<!-- ══ RADIO MUSIQUE 24h/24 ══ -->
+<link rel="stylesheet" href="radio.css">
+<button id="radioToggle" onclick="toggleRadioBar()" title="Radio KLIKOO">
+  <i class="fas fa-music" id="radioToggleIcon"></i>
+</button>
+<div id="radioBar">
+  <div class="rb-label">
+    <div class="rb-dot" id="rbDot"></div>
+    Radio
+  </div>
+  <div class="rb-disc" id="rbDisc">🎵</div>
+  <div class="rb-info">
+    <div class="rb-title" id="rbTitle">Aucune piste</div>
+    <div class="rb-artist" id="rbArtist">Ajoutez des chansons via le Dashboard</div>
+  </div>
+  <div class="rb-progress-wrap">
+    <div class="rb-progress-bar" id="rbProgressBar" onclick="rbSeek(event)">
+      <div class="rb-progress-fill" id="rbProgressFill"></div>
+    </div>
+    <div class="rb-times">
+      <span id="rbCurrent">0:00</span>
+      <span id="rbDuration">0:00</span>
+    </div>
+  </div>
+  <div class="rb-controls">
+    <button class="rb-btn" onclick="rbPrev()" title="Précédent"><i class="fas fa-step-backward"></i></button>
+    <button class="rb-btn-play" id="rbPlayBtn" onclick="rbTogglePlay()"><i class="fas fa-play" id="rbPlayIcon"></i></button>
+    <button class="rb-btn" onclick="rbNext()" title="Suivant"><i class="fas fa-step-forward"></i></button>
+    <button class="rb-btn" id="rbShuffleBtn" onclick="rbToggleShuffle()" title="Aléatoire"><i class="fas fa-random"></i></button>
+  </div>
+  <div class="rb-vol">
+    <i class="fas fa-volume-down"></i>
+    <input type="range" class="rb-vol-slider" id="rbVolSlider" min="0" max="100" value="80" oninput="rbSetVol(this.value)">
+    <i class="fas fa-volume-up"></i>
+  </div>
+  <button id="rbPlaylistBtn" onclick="rbTogglePlaylist()" title="Playlist">
+    <i class="fas fa-list"></i>
+  </button>
+</div>
+
+<!-- Playlist Panel -->
+<div id="rbPlaylistPanel">
+  <div class="rb-pl-header">
+    <div class="rb-pl-title">
+      <i class="fas fa-music"></i> Playlist
+      <span class="rb-pl-count" id="rbPlCount">0 pistes</span>
+    </div>
+    <button class="rb-pl-close" onclick="rbTogglePlaylist()" title="Fermer"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="rb-pl-search-wrap">
+    <input class="rb-pl-search" id="rbPlSearch" type="text" placeholder="Rechercher une piste..." oninput="rbRenderPlaylist(this.value)">
+  </div>
+  <div class="rb-pl-list" id="rbPlList"></div>
+</div>
+<script src="radio.js"></script>
+
+
+<!-- ── APP BOTTOM NAVIGATION ── -->
+<nav class="app-bottom-nav" id="appBottomNav">
+  <a href="index.html" class="app-nav-item">
+    <i class="fas fa-home"></i>
+    <span class="app-nav-label">Accueil</span>
+  </a>
+  <a href="index.html#categories" class="app-nav-item">
+    <i class="fas fa-th-large"></i>
+    <span class="app-nav-label">Catégories</span>
+  </a>
+  <a href="index.html" onclick="localStorage.setItem('openCart','1')" class="app-nav-item">
+    <i class="fas fa-shopping-bag"></i>
+    <span class="app-nav-label">Panier</span>
+  </a>
+  <a href="wishlist.html" class="app-nav-item">
+    <i class="fa-regular fa-heart"></i>
+    <span class="app-nav-label">Favoris</span>
+  </a>
+  <a href="signup.html" class="app-nav-item">
+    <i class="fas fa-user-circle"></i>
+    <span class="app-nav-label">Compte</span>
+  </a>
+</nav>
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(r => console.log('[SW] Registered:', r.scope))
+          .catch(e => console.log('[SW] Error:', e));
+      });
+    }
+    // Install prompt
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', e => {
+      e.preventDefault();
+      deferredPrompt = e;
+      const btn = document.getElementById('installBtn');
+      if (btn) { btn.style.display = 'flex'; btn.onclick = () => { deferredPrompt.prompt(); deferredPrompt = null; btn.style.display='none'; }; }
+    });
+    window.addEventListener('appinstalled', () => {
+      const btn = document.getElementById('installBtn');
+      if (btn) btn.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

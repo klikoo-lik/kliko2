@@ -1,0 +1,58 @@
+<!--
+=================================================================
+  KLIKOO — EMPLACEMENTS PUBLICITAIRES
+  Ajoutez ces snippets dans votre index.html aux bons endroits
+=================================================================
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ ÉTAPE 1 — Dans le <head> de index.html, ajoutez :
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+-->
+<link rel="stylesheet" href="ads.css">
+
+<!--
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ ÉTAPE 2 — Tout au début du <body>, avant le <header> :
+ (Bannière top + sidebars + popup overlay)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+-->
+
+<!-- ▶ BANNIÈRE TOP -->
+<div id="adTopBanner"></div>
+
+<!-- ▶ SIDEBAR GAUCHE -->
+<div id="adSideLeft"></div>
+
+<!-- ▶ SIDEBAR DROITE -->
+<div id="adSideRight"></div>
+
+<!-- ▶ POPUP -->
+<div id="adPopup"></div>
+
+<!--
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ ÉTAPE 3 — Juste avant </body>, après tous les scripts :
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+-->
+<script src="ads.js"></script>
+
+<!--
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ NOTE : Le In-Feed s'injecte automatiquement dans
+ la grille #prodsGrid après chaque 6e produit.
+ Aucun code supplémentaire nécessaire.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ RÉSUMÉ DES FICHIERS :
+  ads.js        → logique pub (auto-rendu)
+  ads.css       → styles pub
+  advertise.html → page annonceurs (formulaire)
+
+ FLUX COMPLET :
+  1. Annonceur remplit advertise.html
+  2. Demande sauvée dans localStorage klikoo_ads_pending
+  3. Admin reçoit notif WhatsApp
+  4. Admin approuve dans le dashboard → statut "active"
+  5. La pub s'affiche automatiquement sur index.html
+=================================================================
+-->

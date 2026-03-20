@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Codes — KLIKO Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <link rel="stylesheet" href="kliko-qrcodes.css">
+</head>
+<body>
+
+<!-- BARRE RETOUR — toujours visible sous la radio -->
+<div class="qr-retour-bar">
+  <a href="index.html">
+    <i class="fas fa-arrow-left"></i>
+    Retour à l'accueil
+  </a>
+</div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <a href="index.html" style="
+      display:inline-flex;align-items:center;gap:8px;
+      background:#ff8716;color:#fff;
+      padding:11px 22px;border-radius:50px;
+      font-size:14px;font-weight:800;
+      text-decoration:none;
+      border:2px solid rgba(255,255,255,0.4);
+      box-shadow:0 4px 20px rgba(255,135,22,.5);
+      margin-bottom:18px;
+      font-family:'Syne',sans-serif;
+    ">
+      <i class="fas fa-arrow-left"></i> Retour à l'accueil
+    </a>
+    <div class="logo">KLIKOO<span>.</span></div>
+    <div class="tagline">Shopping Store</div>
+    <div class="hero-badge"><i class="fas fa-qrcode"></i> QR Codes Officiels</div>
+    <h1>Scannez & Connectez</h1>
+    <p>Tous les QR codes KLIKO Store en un seul endroit. Partagez, imprimez, utilisez partout.</p>
+  </div>
+</div>
+
+<!-- URL INPUT -->
+<div class="container">
+  <div class="url-section">
+    <h3><i class="fas fa-globe" style="color:var(--pr);margin-right:8px"></i>Votre URL de site web</h3>
+    <p>Entrez l'URL de votre site pour générer le QR code correspondant</p>
+    <div class="url-row">
+      <input class="url-input" id="siteUrl" type="url" placeholder="https://www.kliko.ma" value="https://www.kliko.ma">
+      <button class="url-btn" onclick="updateSiteQR()"><i class="fas fa-sync-alt"></i> Générer</button>
+    </div>
+  </div>
+</div>
+
+<!-- QR CODES -->
+<section class="qr-section">
+  <div class="container">
+    <h2 class="sec-title">Vos QR Codes</h2>
+    <p class="sec-sub">Cliquez sur télécharger pour enregistrer chaque QR code en image PNG</p>
+
+    <div class="qr-grid">
+
+      <!-- QR 1: Website -->
+      <div class="qr-card">
+        <div class="qr-icon orange"><i class="fas fa-globe"></i></div>
+        <h3>Site Web</h3>
+        <p>Redirige vers votre boutique en ligne KLIKO Store</p>
+        <div class="qr-wrap"><div id="qr-website"></div></div>
+        <div class="qr-info" id="url-website">https://www.kliko.ma</div>
+        <div class="qr-actions">
+          <button class="btn-dl" onclick="downloadQR('qr-website','kliko-website')">
+            <i class="fas fa-download"></i> Télécharger
+          </button>
+          <button class="btn-copy" onclick="copyUrl('url-website')">
+            <i class="fas fa-copy"></i> Copier
+          </button>
+        </div>
+      </div>
+
+      <!-- QR 2: WhatsApp -->
+      <div class="qr-card">
+        <div class="qr-icon green"><i class="fab fa-whatsapp"></i></div>
+        <h3>WhatsApp</h3>
+        <p>Contactez-nous directement via WhatsApp 24h/7j</p>
+        <div class="qr-wrap"><div id="qr-whatsapp"></div></div>
+        <div class="qr-info">https://wa.me/212774011555</div>
+        <div class="qr-actions">
+          <button class="btn-dl" onclick="downloadQR('qr-whatsapp','kliko-whatsapp')">
+            <i class="fas fa-download"></i> Télécharger
+          </button>
+          <button class="btn-copy" onclick="copyText('https://wa.me/212774011555')">
+            <i class="fas fa-copy"></i> Copier
+          </button>
+        </div>
+      </div>
+
+      <!-- QR 3: Phone -->
+      <div class="qr-card">
+        <div class="qr-icon blue"><i class="fas fa-phone"></i></div>
+        <h3>Téléphone</h3>
+        <p>Appelez-nous directement depuis votre smartphone</p>
+        <div class="qr-wrap"><div id="qr-phone"></div></div>
+        <div class="qr-info">+212 774 011 555</div>
+        <div class="qr-actions">
+          <button class="btn-dl" onclick="downloadQR('qr-phone','kliko-telephone')">
+            <i class="fas fa-download"></i> Télécharger
+          </button>
+          <button class="btn-copy" onclick="copyText('tel:+212774011555')">
+            <i class="fas fa-copy"></i> Copier
+          </button>
+        </div>
+      </div>
+
+      <!-- QR 4: Email -->
+      <div class="qr-card">
+        <div class="qr-icon purple"><i class="fas fa-envelope"></i></div>
+        <h3>Email</h3>
+        <p>Ouvre directement votre boîte mail pour nous écrire</p>
+        <div class="qr-wrap"><div id="qr-email"></div></div>
+        <div class="qr-info">contact@kliko.ma</div>
+        <div class="qr-actions">
+          <button class="btn-dl" onclick="downloadQR('qr-email','kliko-email')">
+            <i class="fas fa-download"></i> Télécharger
+          </button>
+          <button class="btn-copy" onclick="copyText('mailto:contact@kliko.ma')">
+            <i class="fas fa-copy"></i> Copier
+          </button>
+        </div>
+      </div>
+
+      <!-- QR 5: Instagram -->
+      <div class="qr-card">
+        <div class="qr-icon" style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)">
+          <i class="fab fa-instagram"></i>
+        </div>
+        <h3>Instagram</h3>
+        <p>Suivez KLIKO Store sur Instagram pour les nouveautés</p>
+        <div class="qr-wrap"><div id="qr-instagram"></div></div>
+        <div class="qr-info">instagram.com/kliko.store</div>
+        <div class="qr-actions">
+          <button class="btn-dl" onclick="downloadQR('qr-instagram','kliko-instagram')">
+            <i class="fas fa-download"></i> Télécharger
+          </button>
+          <button class="btn-copy" onclick="copyText('https://instagram.com/kliko.store')">
+            <i class="fas fa-copy"></i> Copier
+          </button>
+        </div>
+      </div>
+
+      <!-- QR 6: Facebook -->
+      <div class="qr-card">
+        <div class="qr-icon" style="background:linear-gradient(135deg,#1877f2,#0a58ca)">
+          <i class="fab fa-facebook-f"></i>
+        </div>
+        <h3>Facebook</h3>
+        <p>Rejoignez notre page Facebook et profitez des offres</p>
+        <div class="qr-wrap"><div id="qr-facebook"></div></div>
+        <div class="qr-info">facebook.com/kliko.store</div>
+        <div class="qr-actions">
+          <button class="btn-dl" onclick="downloadQR('qr-facebook','kliko-facebook')">
+            <i class="fas fa-download"></i> Télécharger
+          </button>
+          <button class="btn-copy" onclick="copyText('https://facebook.com/kliko.store')">
+            <i class="fas fa-copy"></i> Copier
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRINT BTN -->
+<div class="print-section">
+  <button class="btn-print" onclick="window.print()">
+    <i class="fas fa-print"></i> Imprimer tous les QR codes
+  </button>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>KLIKO.</span> Store — Tous droits réservés © 2026 | Casablanca, Maroc
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastMsg"></span></div>  <script src="kliko-qrcodes.js"></script>
+
+<!-- ══ RADIO MUSIQUE 24h/24 ══ -->
+<link rel="stylesheet" href="radio.css">
+<div id="radioBar">
+  <div class="rb-label">
+    <div class="rb-dot"></div>
+    <span>🎸 Guitare</span>
+  </div>
+  <div class="rb-disc" id="rbDisc">🕌</div>
+  <div class="rb-info">
+    <div class="rb-title" id="rbTitle">Acoustic Breeze</div>
+    <div class="rb-artist" id="rbArtist">Benjamin Tissot</div>
+  </div>
+  <div class="rb-progress-wrap">
+    <div class="rb-progress-bar" id="rbProgressBar" onclick="rbSeek(event)">
+      <div class="rb-progress-fill" id="rbProgressFill"></div>
+    </div>
+    <div class="rb-times">
+      <span id="rbCurrent">0:00</span>
+      <span id="rbDuration">0:00</span>
+    </div>
+  </div>
+  <div class="rb-controls">
+    <button class="rb-btn" onclick="rbPrev()" title="Précédent"><i class="fas fa-step-backward"></i></button>
+    <button class="rb-btn-play" id="rbPlayBtn" onclick="rbTogglePlay()"><i class="fas fa-play" id="rbPlayIcon"></i></button>
+    <button class="rb-btn" onclick="rbNext()" title="Suivant"><i class="fas fa-step-forward"></i></button>
+    <button class="rb-btn" id="rbShuffleBtn" onclick="rbToggleShuffle()" title="Aléatoire"><i class="fas fa-random"></i></button>
+  </div>
+  <div class="rb-vol">
+    <i class="fas fa-volume-down"></i>
+    <input type="range" class="rb-vol-slider" id="rbVolSlider" min="0" max="100" value="65" oninput="rbSetVol(this.value)">
+    <i class="fas fa-volume-up"></i>
+  </div>
+</div>
+<script src="radio.js"></script>
+
+<!-- Injection bouton retour dans la barre radio -->
+<script>
+(function(){
+  // Vérifie si on est sur la page QR
+  if(!window.location.pathname.includes('kliko-qrcodes')) return;
+  
+  function injectBtn(){
+    var bar = document.getElementById('radioBar');
+    if(!bar) return;
+    // Éviter doublon
+    if(document.getElementById('qr-retour-btn')) return;
+    var btn = document.createElement('a');
+    btn.id = 'qr-retour-btn';
+    btn.href = 'index.html';
+    btn.innerHTML = '&#8592; Retour';
+    btn.style.cssText = [
+      'display:inline-flex',
+      'align-items:center',
+      'gap:6px',
+      'background:#ff8716',
+      'color:#fff',
+      'padding:8px 14px',
+      'border-radius:20px',
+      'font-size:12px',
+      'font-weight:800',
+      'text-decoration:none',
+      'border:1.5px solid rgba(255,255,255,0.4)',
+      'box-shadow:0 2px 10px rgba(255,135,22,.5)',
+      'margin-left:auto',
+      'flex-shrink:0',
+      'font-family:Syne,sans-serif',
+      'white-space:nowrap'
+    ].join(';');
+    bar.appendChild(btn);
+  }
+
+  // Essayer immédiatement et après chargement
+  injectBtn();
+  window.addEventListener('load', function(){
+    injectBtn();
+    // Réessayer après que radio-inject.js ait fini
+    setTimeout(injectBtn, 500);
+    setTimeout(injectBtn, 1500);
+  });
+
+  // Observer mutations DOM pour détecter quand radioBar est créé
+  var obs = new MutationObserver(function(){
+    injectBtn();
+  });
+  obs.observe(document.body, { childList:true, subtree:true });
+})();
+</script>
+
+</body>
+</html>

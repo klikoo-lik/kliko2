@@ -1,0 +1,46 @@
+<footer class="site-footer">
+  <div class="f-nl"><div class="container f-nl-inner">
+    <div class="f-nl-text"><h3>&#128231; Restez Inform&eacute; !</h3><p>Recevez nos offres exclusives et nouveaut&eacute;s</p></div>
+    <div class="f-nl-form"><input type="email" placeholder="Votre adresse email..."><button onclick="showToast('&#9989; Merci pour votre inscription !')">S'abonner</button></div>
+  </div></div>
+  <div class="container f-grid">
+    <div class="fc"><h4>KLIKOO Store</h4><p class="fc-about">Votre destination shopping de confiance pour des produits de qualit&eacute; &agrave; prix comp&eacute;titifs. La meilleure exp&eacute;rience d'achat en ligne au Maroc.</p><div class="f-badge"><i class="fas fa-shipping-fast"></i> Livraison dans tout le Maroc</div></div>
+    <div class="fc"><h4>Navigation</h4><ul class="f-links"><li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li><li><a href="about.html"><i class="fas fa-info-circle"></i> &Agrave; Propos</a></li><li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li><li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li></ul></div>
+    <div class="fc"><h4>Service Client</h4><ul class="f-links"><li><a href="wishlist.html"><i class="fas fa-heart"></i> Ma Liste</a></li><li><a href="#"><i class="fas fa-truck"></i> Suivi commande</a></li><li><a href="#"><i class="fas fa-undo"></i> Retours</a></li><li><a href="#"><i class="fas fa-question-circle"></i> FAQ</a></li></ul></div>
+    <div class="fc"><h4>Contactez-nous</h4>
+      <div class="f-contact">
+        <div class="f-ci"><div class="f-ci-ic"><i class="fas fa-phone"></i></div><div class="f-ci-tx"><small>T&eacute;l&eacute;phone</small><a href="tel:+212774011555">+212 774 011 555</a></div></div>
+        <div class="f-ci"><div class="f-ci-ic"><i class="fas fa-envelope"></i></div><div class="f-ci-tx"><small>Email</small><a href="mailto:contact@klikoo.ma">contact@klikoo.ma</a></div></div>
+        <div class="f-ci"><div class="f-ci-ic"><i class="fas fa-map-marker-alt"></i></div><div class="f-ci-tx"><small>Adresse</small><a>Casablanca, Maroc</a></div></div>
+        <div class="f-ci"><div class="f-ci-ic"><i class="fas fa-clock"></i></div><div class="f-ci-tx"><small>Horaires</small><a>Lun&ndash;Sam : 9h&ndash;18h</a></div></div>
+      </div>
+      <div class="f-soc"><h5>Suivez-nous</h5><div class="f-soc-icons"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="https://wa.me/212774011555" target="_blank"><i class="fab fa-whatsapp"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div>
+    </div>
+  </div>
+  <div class="f-bot"><div class="container f-bot-inner">
+    <div>
+      <div class="f-copy" id="klikoo-admin-trigger" style="cursor:default;user-select:none;">&copy; 2026 KLIKOO Store. Tous droits r&eacute;serv&eacute;s.</div>
+      <div class="f-legal"><a href="#">Confidentialit&eacute;</a><a href="#">Mentions l&eacute;gales</a><a href="#">Cookies</a></div>
+    </div>
+    <div class="f-pay"><i class="fas fa-credit-card"></i><i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i><i class="fas fa-money-bill-wave"></i></div>
+  </div></div>
+</footer>
+
+<a href="https://wa.me/212774011555" class="wa-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+(function () {
+  var clicks = 0, timer = null;
+  var el = document.getElementById('klikoo-admin-trigger');
+  if (!el) return;
+  el.addEventListener('click', function () {
+    clicks++;
+    clearTimeout(timer);
+    timer = setTimeout(function () { clicks = 0; }, 2000);
+    if (clicks >= 5) {
+      clicks = 0;
+      window.location.href = 'login-admin.html';
+    }
+  });
+})();
+</script>
